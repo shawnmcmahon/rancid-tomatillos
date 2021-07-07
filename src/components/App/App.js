@@ -18,14 +18,11 @@ class App extends React.Component {
   }
 
   componentDidMount = () => {
-    console.log("WORKING?????")
     const url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/'
     fetch(url)
     .then(response => response.json())
     .then(data => this.setState({movies : data, isLoading : false}))
     .catch(error => console.log('Something went wrong', error))
-
-    // setTimeout(this.setState( { movies : movieData }), 10000);
   }
 
   showMovie = (id) => {
@@ -48,45 +45,28 @@ class App extends React.Component {
     );
   }
 
+  backToMain = () => {
+    this.setState({currentMovie: ""})
+  }
+
   renderMoviePage() {
     return (
       <MoviePage
         title={this.state.currentMovie.movie.title}
         overview={this.state.currentMovie.movie.overview}
+        tagline={this.state.currentMovie.movie.tagline}
         backdrop={this.state.currentMovie.movie.backdrop_path}
-
+        goBack={this.backToMain}
       />
     )
   }
 
   render() {
-    // const isShowingAllMovies = {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
-
-    // let isShowingAll = ({true ? console.log("YES") : console.log("NO");})
-
     return (
-      // isShowingAll
       <div>
         {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
       </div>
     )
-
-
-  // backdrop_path
-  // overview
-  // title
-  // tagline
-
-    // return (
-    //   <main className="App">
-    //     <AllMovies
-    //       movies={!this.state.isLoading ? this.state.movies : null}
-    //       showMovie={this.showMovie}
-    //
-    //     />
-    //   </main>
-    // );
-
   }
 }
 
