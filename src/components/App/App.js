@@ -12,7 +12,8 @@ class App extends React.Component {
       this.state = {
         movies: [],
         isLoading: true,
-        currentMovie: {}
+        currentMovie: "",
+        test: true
       }
   }
 
@@ -59,12 +60,15 @@ class App extends React.Component {
   }
 
   render() {
-    const isShowingAllMovies = {!this.state.currentMovie.movie ? this.renderAllMovies() : this.renderMoviePage()}
+    // const isShowingAllMovies = {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
 
-
+    // let isShowingAll = ({true ? console.log("YES") : console.log("NO");})
 
     return (
-      this.renderAllMovies()
+      // isShowingAll
+      <div>
+        {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
+      </div>
     )
 
 
