@@ -29,9 +29,9 @@ class App extends React.Component {
   showMovie = (id) => {
     console.log('id', id)
     let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-    // fetch(url + id)
-    //   .then(response => response.json())
-    //   .then(data => this.setState({currentMovie: data}))
+    fetch(url + id)
+      .then(response => response.json())
+      .then(data => this.setState({currentMovie: data}))
   }
 
   render() {
