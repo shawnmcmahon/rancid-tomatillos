@@ -2,7 +2,10 @@ import React from 'react';
 import Movie from '../Movie/Movie';
 
 const AllMovies = (props) => {
-    console.log('props.movies', props.movies)
+    console.log('props', props)
+    if (props.movies === null) {
+        return null
+    } 
     const moviePosters = props.movies.movies.map(movie => {
         return (
             <Movie
