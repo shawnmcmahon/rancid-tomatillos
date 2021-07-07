@@ -1,13 +1,20 @@
 import React from 'react';
 import './Movie.css';
 
-const Movie = (props) => {
-    return (
-        <div>
-            <img src={props.poster} className="movie"/>
-            <h3>Rating: {props.rating.toFixed(1)}</h3>
-        </div>
-    )
+class Movie extends React.Component {
+    handleClick = () => {
+        this.props.showMovie(this.props.id)
+    }
+
+    render() {
+        return (
+            <div onClick={this.handleClick}>
+                <img src={this.props.poster} className="movie" id={this.props.id} />
+                <h3>Rating: {this.props.rating.toFixed(1)}</h3>
+            </div>
+        )
+
+    }
 }
 
 

@@ -13,6 +13,8 @@ const AllMovies = (props) => {
                 poster={movie.poster_path}
                 title={movie.title}
                 rating={movie.average_rating}
+                showMovie={props.showMovie}
+
             />
         )
     })
