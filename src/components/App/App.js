@@ -1,20 +1,25 @@
 import React from 'react';
+import AllMovies from '../AllMovies/AllMovies';
+// import Search from '../Search/Search'
 import './App.css';
+import movieData from '../../data/movieData';
+
 
 class App extends React.Component {
   constructor()  {
     super()
       this.state = {
-        movies: []
+        movies: movieData
       }
   }
 
 
+
   render() {
     return (
-      <div className="App">
-        <h2>Hello World!</h2>
-      </div>
+      <main className="App">
+        <AllMovies movies={this.state.movies}/> 
+      </main>
     );
 
   }
