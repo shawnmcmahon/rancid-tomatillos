@@ -3,7 +3,7 @@ import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
 // import Search from '../Search/Search'
 import './App.css';
-import movieData from '../../data/movieData';
+// import movieData from '../../data/movieData';
 
 
 class App extends React.Component {
