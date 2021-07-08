@@ -9,7 +9,7 @@ class Movie extends React.Component {
     render() {
         return (
             <div onClick={this.handleClick}>
-                <img src={this.props.poster} className="movie" id={this.props.id} />
+                <img src={this.props.poster} className="movie" id={this.props.id} alt={this.props.title} />
                 <h3>Rating: {this.props.rating.toFixed(1)}</h3>
             </div>
         )
@@ -19,6 +19,3 @@ class Movie extends React.Component {
 
 
 export default Movie;
-
-
-
