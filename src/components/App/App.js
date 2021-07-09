@@ -13,16 +13,29 @@ class App extends React.Component {
         movies: [],
         isLoading: true,
         currentMovie: "",
-        test: true
+        test: true,
+        error: false
       }
   }
 
   componentDidMount = () => {
-    const url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/'
+    const url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
+    const url2 = 'https://httpstat.us/500'
     fetch(url)
-    .then(response => response.json())
+    .then(this.checkForError)
     .then(data => this.setState({movies : data, isLoading : false}))
-    .catch(error => console.log('Something went wrong', error))
+    .catch(error => console.log('Something went wrong:', error))
+  }
+
+  checkForError = (response) => {
+    console.log(response)
+    if (!response.ok) {
+      const statusCode = response.status;
+      this.setState({ error: true});
+      throw new Error(`Something went wrong, please try again. Error Code: ${statusCode}`)
+    } else {
+      return response.json()
+    }
   }
 
   showMovie = (id) => {
@@ -64,6 +77,10 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        {
+          this.state.error && <h1>Server is experience error, please try again later.</h1>
+        }
+
         {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
       </div>
     )
