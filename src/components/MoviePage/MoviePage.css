@@ -1,9 +1,32 @@
 button {
+  position: relative;
   margin-bottom: 10%;
-  width: 300px;
+  width: 88%;
 }
 
-.backdrop {
+.background-image {
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.background-image h1 {
+  margin: 0;
+}
+
+.movie-info {
+  color: white;
+  padding: 14px;
+  width: 33%;
+  text-align: center;
+  background: rgba(0,0,0, 0.78);
+  border-radius: 8px;
+}
+
+/* .backdrop {
   width: 1280px;
   height: 720px;
-}
+} */
