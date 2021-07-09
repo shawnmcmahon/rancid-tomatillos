@@ -69,6 +69,9 @@ class App extends React.Component {
         overview={this.state.currentMovie.movie.overview}
         tagline={this.state.currentMovie.movie.tagline}
         backdrop={this.state.currentMovie.movie.backdrop_path}
+        genres={this.state.currentMovie.movie.genres}
+        runtime={this.state.currentMovie.movie.runtime}
+        rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
       />
     )

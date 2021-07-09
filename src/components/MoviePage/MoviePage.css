@@ -1,9 +1,57 @@
 button {
-  margin-bottom: 10%;
-  width: 300px;
+  position: relative;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  width: 88%;
+  height: 40px;
+  background: none;
+  border: 1px solid white;
+  color: white;
+  cursor: pointer;
 }
 
-.backdrop {
+.background-image {
+  display: grid;
+  place-items: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+.background-image h1 {
+  margin: 0;
+}
+
+.genre {
+  padding: 8px;
+  font-size: 13px;
+  border: 1px solid white;
+  border-radius: 12px;
+}
+
+.genre-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3%;
+}
+
+.runtime-rating {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.movie-info {
+  color: white;
+  padding: 14px;
+  width: 33%;
+  text-align: center;
+  background: rgba(0,0,0, 0.82);
+  border-radius: 8px;
+}
+
+/* .backdrop {
   width: 1280px;
   height: 720px;
-}
+} */
