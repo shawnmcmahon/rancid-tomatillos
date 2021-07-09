@@ -17,6 +17,10 @@ const MoviePage = (props) => {
         <h1>{props.title}</h1>
         <h2>{props.tagline}</h2>
         <p>{!props.overview ? "No overview available" : props.overview}</p>
+        <div className="runtime-rating">
+          <p>Runtime: {props.runtime} min</p>
+          <p>Average Rating: {props.rating.toFixed(1)}</p>
+        </div>
         <div className="genre-container">
           {genres}
         </div>
