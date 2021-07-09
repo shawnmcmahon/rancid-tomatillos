@@ -17,6 +17,19 @@ button {
   margin: 0;
 }
 
+.genre {
+  padding: 8px;
+  border: 1px solid white;
+  border-radius: 18px;
+}
+
+.genre-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3%;
+}
+
+
 .movie-info {
   color: white;
   padding: 14px;
