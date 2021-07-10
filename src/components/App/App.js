@@ -13,6 +13,7 @@ class App extends React.Component {
         movies: [],
         isLoading: true,
         currentMovie: "",
+        currentTrailers: "",
         test: true,
         error: false
       }
@@ -41,9 +42,15 @@ class App extends React.Component {
   showMovie = (id) => {
     console.log('id', id)
     let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-    fetch(url + id)
+    let movieUrl = url + id
+    fetch(movieUrl)
       .then(response => response.json())
-      .then(data => this.setState({currentMovie: data}))
+      .then(data => {
+        this.setState({currentMovie: data})
+        return fetch(movieUrl + '/videos/')
+      })
+      .then(response => response.json())
+      .then(data => this.setState({currentTrailers: data.videos}))
   }
 
   renderAllMovies = () => {
@@ -59,7 +66,7 @@ class App extends React.Component {
   }
 
   backToMain = () => {
-    this.setState({currentMovie: ""})
+    this.setState({currentMovie: "", currentTrailers: ""})
   }
 
   renderMoviePage() {
@@ -73,6 +80,7 @@ class App extends React.Component {
         runtime={this.state.currentMovie.movie.runtime}
         rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
+        trailers={this.state.currentTrailers}
       />
     )
   }
