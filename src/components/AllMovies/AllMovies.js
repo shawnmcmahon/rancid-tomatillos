@@ -1,5 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import Movie from '../Movie/Movie';
 import './AllMovies.css'
 
@@ -32,3 +32,9 @@ const AllMovies = (props) => {
 }
 
 export default AllMovies;
+
+Movie.propTypes = {
+    movies: PropTypes.object, 
+    showMovie: PropTypes.func
+}
+
