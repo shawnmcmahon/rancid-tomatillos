@@ -13,6 +13,7 @@ class App extends React.Component {
         movies: [],
         isLoading: true,
         currentMovie: "",
+        currentTrailers: "",
         test: true,
         error: false
       }
@@ -41,9 +42,15 @@ class App extends React.Component {
   showMovie = (id) => {
     console.log('id', id)
     let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-    fetch(url + id)
+    let movieUrl = url + id
+    fetch(movieUrl)
       .then(response => response.json())
-      .then(data => this.setState({currentMovie: data}))
+      .then(data => {
+        this.setState({currentMovie: data})
+        return fetch(movieUrl + '/videos/')
+      })
+      .then(response => response.json())
+      .then(data => this.setState({currentTrailers: data.videos}))
   }
 
   renderAllMovies = () => {
@@ -59,12 +66,13 @@ class App extends React.Component {
   }
 
   backToMain = () => {
-    this.setState({currentMovie: ""})
+    this.setState({currentMovie: "", currentTrailers: ""})
   }
 
   renderMoviePage() {
     return (
       <MoviePage
+        className="all-movies"
         title={this.state.currentMovie.movie.title}
         overview={this.state.currentMovie.movie.overview}
         tagline={this.state.currentMovie.movie.tagline}
@@ -73,6 +81,7 @@ class App extends React.Component {
         runtime={this.state.currentMovie.movie.runtime}
         rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
+        trailers={this.state.currentTrailers}
       />
     )
   }
@@ -80,6 +89,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <header><h1>Rancid Tomatillos</h1></header><br />
         {
           this.state.error && <h1>Server is experience error, please try again later.</h1>
         }
