@@ -1,4 +1,5 @@
 import React from "react"
+import PropTypes from "prop-types";
 import "./MoviePage.css"
 
 const MoviePage = (props) => {
@@ -7,7 +8,7 @@ const MoviePage = (props) => {
   backgroundImage: `url(${props.backdrop})`
 };
 
-  const genres = props.genres.map(genre=> <div className="genre">{genre}</div>)
+  const genres = props.genres.map((genre, index)=> <div key={index} className="genre">{genre}</div>)
 
 
 // <img className="backdrop" src={props.backdrop} alt={props.title} />
@@ -31,3 +32,14 @@ const MoviePage = (props) => {
 }
 
 export default MoviePage
+
+MoviePage.propTypes = {
+  backdrop: PropTypes.string,
+  genres: PropTypes.array, 
+  title: PropTypes.string, 
+  tagline: PropTypes.string, 
+  overview: PropTypes.string,
+  runtime: PropTypes.number, 
+  rating: PropTypes.number,
+  goBack: PropTypes.func,
+};
