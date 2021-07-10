@@ -1,4 +1,11 @@
 .movie {
     width: 236px;
     height: 354px;
+    transition: .2s ease all;
+    cursor: pointer;
+}
+
+.movie:hover {
+  transform: scale3d(1.1, 1.1, 1.1);
+  /* filter: brightness(50%); */
 }
