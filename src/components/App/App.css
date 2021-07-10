@@ -1,4 +1,18 @@
 
+header {
+  position: fixed;
+  width: 100vw;
+  margin: 0;
+  text-align: center;
+  background: #383232;
+  z-index: 10;
+}
+
+header h1 {
+  padding: 20px 0;
+  margin: 0;
+  color: white;
+}
 
 
 /* .App {

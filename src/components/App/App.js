@@ -72,6 +72,7 @@ class App extends React.Component {
   renderMoviePage() {
     return (
       <MoviePage
+        className="all-movies"
         title={this.state.currentMovie.movie.title}
         overview={this.state.currentMovie.movie.overview}
         tagline={this.state.currentMovie.movie.tagline}
@@ -88,6 +89,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
+        <header><h1>Rancid Tomatillos</h1></header><br />
         {
           this.state.error && <h1>Server is experience error, please try again later.</h1>
         }
