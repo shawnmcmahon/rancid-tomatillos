@@ -47,10 +47,7 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({currentMovie: data})
-        // return fetch(movieUrl + '/videos/')
       })
-  //     .then(response => response.json())
-  //     .then(data => this.setState({currentTrailers: data.videos}))
   }
 
   renderAllMovies = () => {
