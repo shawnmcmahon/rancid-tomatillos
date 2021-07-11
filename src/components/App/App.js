@@ -1,8 +1,12 @@
 import React from 'react';
 import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 // import Search from '../Search/Search'
 import './App.css';
+library.add(faStar)
 // import movieData from '../../data/movieData';
 
 
@@ -79,6 +83,7 @@ class App extends React.Component {
         runtime={this.state.currentMovie.movie.runtime}
         rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
+        release={this.state.currentMovie.movie.release_date}
         trailers={this.state.currentTrailers}
         poster={this.state.currentMovie.movie.poster_path}
       />

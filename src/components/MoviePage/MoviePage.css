@@ -16,17 +16,25 @@ button {
   background-repeat: no-repeat;
   background-position: center;
   height: 100vh;
+  place-items: center;
 
 }
 
 .info-media {
   display: flex;
-  height: 80vh; 
+  height: 80vh;
   width: 100vw;
-
+  margin-top: -6em;
 }
 
+.blur {
+  filter: blur(4px);
+}
+
+
+
 .background-image h1 {
+  font-size: 60px;
   margin: 0;
 }
 
@@ -41,50 +49,86 @@ button {
   display: flex;
   justify-content: space-around;
   margin-bottom: 3%;
+  width: 50%;
 }
 
 .runtime-rating {
   display: flex;
-  justify-content: space-between;
+  padding-bottom: 3%;
+  /* flex-direction: column; */
 }
 
+.runtime-rating p {
+  margin: 0;
+}
+
+.rating-runtime-genre {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
 
 .movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   color: white;
-  padding: 14px;
+  padding: 1em 2em;
   width: 50%;
-  text-align: center;
+  text-align: left;
+  font-size: 22px;
   background: rgba(0,0,0, 0.82);
   border-radius: 8px;
-  height: 80%;
-  margin-top: 6em;
+  height: 90%;
+  margin-top: 4.2em;
   margin-left: 1em;
+  word-wrap: break-word;
 }
+
 
 .single-poster {
   /* height: 402px;
   width: 268px; */
-  height: 100%; 
-  width: 100%;
+  height: 133%;
+  width: 90%;
   position: absolute;
-  top: 0; 
+  top: 0;
   left: 0;
 }
 
+
+.runtime {
+  font-size: 18px;
+}
+
 .image-container {
-  padding-bottom: 66.66%;
-  height: 0; 
+  padding-bottom: 67%;
+  height: 0;
   width: 80%;
   position: relative;
 }
 
 .poster-trailers {
-  margin-left: 3em;
+  margin-left: 8em;
   margin-top: 6em;
+  margin-right: -5%;
   width: 35%;
+  height: 90%;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+}
+
+/* .tagline {
+  text-align: center;
+} */
+
+.year {
+  display: inline;
+  color: #D8D8E3;
+  font-size: 54px;
 }
 /* .backdrop {
   width: 1280px;

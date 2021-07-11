@@ -1,6 +1,7 @@
 import React from "react"
 import Trailer from '../Trailer/Trailer.js';
 import "./MoviePage.css"
+import Rating from '../Rating/Rating.js'
 
 const MoviePage = (props) => {
 
@@ -16,14 +17,26 @@ const MoviePage = (props) => {
 
   // console.log('props.trailers', props.trailers)
 
+  const formatTime = () => {
+    if (props.runtime > 60) {
+      const time = {
+        hours: (Math.floor(props.runtime / 60)),
+        minutes: (props.runtime % 60)
+      }
+      return `${time.hours} hr ${time.minutes} min`
+    }
+    return `${props.runtime} min`
+  }
+
   return (
     <div className="background-image" style={styles}>
       <div className="info-media">
         <div className="poster-trailers">
           <div className="image-container">
-          <img src={props.poster}         className="single-poster" 
-          height="402px" 
-          width="268px"/>
+          <img src={props.poster}
+            className="single-poster"
+            height="402px"
+            width="268px"/>
           </div>
             <Trailer
               // key={copy.key}
@@ -33,15 +46,17 @@ const MoviePage = (props) => {
             />
         </div>
         <div className="movie-info">
-          <h1>{props.title}</h1>
-          <h2>{props.tagline}</h2>
+          <h1>{props.title} <p className="year">({props.release.split('-')[0]})</p></h1>
+          <Rating rating={props.rating} />
+          <h2 className="tagline">{props.tagline}</h2>
           <p>{!props.overview ? "No overview available" : props.overview}</p>
-          <div className="runtime-rating">
-            <p>Runtime: {props.runtime} min</p>
-            <p>Average Rating: {props.rating.toFixed(1)}</p>
-          </div>
-          <div className="genre-container">
-            {genres}
+          <div className="rating-runtime-genre">
+            <div className="runtime-rating">
+              <p className="runtime"><strong>{formatTime()}</strong></p>
+            </div>
+            <div className="genre-container">
+              {genres}
+            </div>
           </div>
           <button onClick={props.goBack}>Go Back</button>
         </div>
@@ -51,4 +66,3 @@ const MoviePage = (props) => {
 }
 
 export default MoviePage
-
