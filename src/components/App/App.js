@@ -79,6 +79,7 @@ class App extends React.Component {
         runtime={this.state.currentMovie.movie.runtime}
         rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
+        release={this.state.currentMovie.movie.release_date}
         trailers={this.state.currentTrailers}
         poster={this.state.currentMovie.movie.poster_path}
       />
