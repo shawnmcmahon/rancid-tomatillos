@@ -1,13 +1,16 @@
-/* .video-responsive {
-  overflow: hidden;
+.video-responsive {
+  /* overflow: hidden; */
   padding-bottom: 56.25%;
   position: relative;
+  margin-top: 6em;
+  margin-bottom: 2em;
   height: 0;
+  width: 80%;
 }
-.video-responsive iframe {
-  left: 0;
-  top: 0;
+iframe {
   height: 100%;
   width: 100%;
   position: absolute;
-} */
+  top: 0; 
+  left: 0;
+}

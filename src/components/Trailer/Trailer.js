@@ -1,4 +1,3 @@
-import { render } from '@testing-library/react';
 import React from 'react';
 import './Trailer.css';
 
@@ -32,16 +31,18 @@ class Trailer extends React.Component {
       return copy.key;
     }
       return (
-        <div> 
+        <div className="video-responsive">  
           {
             this.state.trailers &&  
             <iframe
-              width="560"
               src={"http://www.youtube.com/embed/" + getRandomTrailerKey()}
-              height="315"
-              title={this.props.title}
+              width="560"
+              height="349"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              title="Embedded youtube"
+              >
             </iframe>
           }
          
