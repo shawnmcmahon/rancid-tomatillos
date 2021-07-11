@@ -3,7 +3,6 @@ import Movie from '../Movie/Movie';
 import './AllMovies.css'
 
 const AllMovies = (props) => {
-    console.log('props', props)
     if (props.movies === null) {
         return null
     }
