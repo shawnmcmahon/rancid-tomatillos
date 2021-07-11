@@ -16,14 +16,18 @@ const MoviePage = (props) => {
 // <img className="backdrop" src={props.backdrop} alt={props.title} />
   return (
     <div className="background-image" style={styles}>
-    <iframe
+      <Trailer
+        id={props.id}
+        title={props.title}
+      /> 
+    {/* <iframe
         width="560"
         src={"http://www.youtube.com/embed/" + copy.key}
         height="315"
         title={props.title}
         frameBorder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen>
-      </iframe>
+      </iframe> */}
       <div className="movie-info">
         <h1>{props.title}</h1>
         <h2>{props.tagline}</h2>

@@ -1,21 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './Trailer.css';
 
 
-class Trailer extends Component {
-  constructor()  {
-    super() 
-    this.state = {
+const Trailer = (props) => {
+  
+  
 
-    }
-  }
-
-  render() {
     return (
+      <div> 
+        <iframe
+          width="560"
+          src={`http://www.youtube.com/embed/${props.id}`}
+          height="315"
+          title={props.title}
+          frameBorder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen 
+        />           
+      </div>
   
     )
 
-  }
 
 }
 
