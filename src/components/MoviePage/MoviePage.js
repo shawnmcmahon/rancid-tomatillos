@@ -1,6 +1,7 @@
 import React from "react"
 import Trailer from '../Trailer/Trailer.js';
 import "./MoviePage.css"
+import Rating from '../Rating/Rating.js'
 
 const MoviePage = (props) => {
 
@@ -32,9 +33,10 @@ const MoviePage = (props) => {
       <div className="info-media">
         <div className="poster-trailers">
           <div className="image-container">
-          <img src={props.poster}         className="single-poster"
-          height="402px"
-          width="268px"/>
+          <img src={props.poster}
+            className="single-poster"
+            height="402px"
+            width="268px"/>
           </div>
             <Trailer
               // key={copy.key}
@@ -45,6 +47,7 @@ const MoviePage = (props) => {
         </div>
         <div className="movie-info">
           <h1>{props.title} <p className="year">({props.release.split('-')[0]})</p></h1>
+          <Rating rating={props.rating} />
           <h2 className="tagline">{props.tagline}</h2>
           <p>{!props.overview ? "No overview available" : props.overview}</p>
           <div className="rating-runtime-genre">
