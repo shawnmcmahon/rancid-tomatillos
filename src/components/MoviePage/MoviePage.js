@@ -11,16 +11,18 @@ const MoviePage = (props) => {
 
 
   const genres = props.genres.map(genre=> <div className="genre">{genre}</div>)
-  const randomTrailer = props.trailers[Math.floor(Math.random() * props.trailers.length)]
-  const copy = {...randomTrailer}
+  // const randomTrailer = props.trailers[Math.floor(Math.random() * props.trailers.length)]
+  // const copy = {...randomTrailer}
 
-  console.log('copy.key', copy.key)
+  // console.log('props.trailers', props.trailers)
 
   return (
     <div className="background-image" style={styles}>
       <Trailer
-        key={copy.key}
+        // key={copy.key}
+        id={props.id}
         title={props.title}
+        trailers={props.trailers}
       /> 
       <div className="movie-info">
         <h1>{props.title}</h1>

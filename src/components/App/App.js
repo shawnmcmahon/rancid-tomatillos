@@ -47,10 +47,10 @@ class App extends React.Component {
       .then(response => response.json())
       .then(data => {
         this.setState({currentMovie: data})
-        return fetch(movieUrl + '/videos/')
+        // return fetch(movieUrl + '/videos/')
       })
-      .then(response => response.json())
-      .then(data => this.setState({currentTrailers: data.videos}))
+  //     .then(response => response.json())
+  //     .then(data => this.setState({currentTrailers: data.videos}))
   }
 
   renderAllMovies = () => {
@@ -73,6 +73,7 @@ class App extends React.Component {
     return (
       <MoviePage
         className="all-movies"
+        id={this.state.currentMovie.movie.id}
         title={this.state.currentMovie.movie.title}
         overview={this.state.currentMovie.movie.overview}
         tagline={this.state.currentMovie.movie.tagline}
