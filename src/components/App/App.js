@@ -80,6 +80,7 @@ class App extends React.Component {
         rating={this.state.currentMovie.movie.average_rating}
         goBack={this.backToMain}
         trailers={this.state.currentTrailers}
+        poster={this.state.currentMovie.movie.poster_path}
       />
     )
   }

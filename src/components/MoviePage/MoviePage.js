@@ -18,24 +18,33 @@ const MoviePage = (props) => {
 
   return (
     <div className="background-image" style={styles}>
-      <Trailer
-        // key={copy.key}
-        id={props.id}
-        title={props.title}
-        trailers={props.trailers}
-      /> 
-      <div className="movie-info">
-        <h1>{props.title}</h1>
-        <h2>{props.tagline}</h2>
-        <p>{!props.overview ? "No overview available" : props.overview}</p>
-        <div className="runtime-rating">
-          <p>Runtime: {props.runtime} min</p>
-          <p>Average Rating: {props.rating.toFixed(1)}</p>
+      <div className="info-media">
+        <div className="poster-trailers">
+          <div className="image-container">
+          <img src={props.poster}         className="single-poster" 
+          height="402px" 
+          width="268px"/>
+          </div>
+            <Trailer
+              // key={copy.key}
+              id={props.id}
+              title={props.title}
+              trailers={props.trailers}
+            />
         </div>
-        <div className="genre-container">
-          {genres}
+        <div className="movie-info">
+          <h1>{props.title}</h1>
+          <h2>{props.tagline}</h2>
+          <p>{!props.overview ? "No overview available" : props.overview}</p>
+          <div className="runtime-rating">
+            <p>Runtime: {props.runtime} min</p>
+            <p>Average Rating: {props.rating.toFixed(1)}</p>
+          </div>
+          <div className="genre-container">
+            {genres}
+          </div>
+          <button onClick={props.goBack}>Go Back</button>
         </div>
-        <button onClick={props.goBack}>Go Back</button>
       </div>
     </div>
   )
