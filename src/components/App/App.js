@@ -1,8 +1,12 @@
 import React from 'react';
 import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
+
 // import Search from '../Search/Search'
 import './App.css';
+library.add(faStar)
 // import movieData from '../../data/movieData';
 
 

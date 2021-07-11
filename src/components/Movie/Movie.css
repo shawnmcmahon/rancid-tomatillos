@@ -9,3 +9,7 @@
   transform: scale3d(1.1, 1.1, 1.1);
   /* filter: brightness(50%); */
 }
+
+.checked {
+  color: orange;
+}
