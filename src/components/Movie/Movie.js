@@ -1,6 +1,7 @@
 import React from 'react';
 import './Movie.css';
 import Rating from '../Rating/Rating.js'
+import { Link } from "react-router-dom"
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 class Movie extends React.Component {
@@ -17,9 +18,11 @@ class Movie extends React.Component {
         // let stars = start.map(star => <FontAwesomeIcon icon="star" />)
         // console.log("RATING", rating, "STARS", stars)
         return (
-            <div onClick={this.handleClick}>
+            <div>
+              <Link to={`${this.props.id}`}>
                 <img src={this.props.poster} className="movie" id={this.props.id} alt={this.props.title} />
-                <Rating rating={this.props.rating} />
+              </Link>
+              <Rating rating={this.props.rating} />
             </div>
         )
 

@@ -4,10 +4,8 @@ import MoviePage from '../MoviePage/MoviePage';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import {
-        BrowserRouter as Router,
         Switch,
         Route,
-        Link
       } from "react-router-dom";
 
 // import Search from '../Search/Search'
@@ -98,30 +96,27 @@ class App extends React.Component {
 
   render() {
     return (
-      <Router basename="/">
-          <header><h1>Rancid Tomatillos</h1></header><br />
+      <main>
+        <header><h1>Rancid Tomatillos</h1></header><br />
         <Switch>
-          <Route path="/" render={() =>  this.renderAllMovies()}
-          />
+          <Route exact path="/" render={() =>  this.renderAllMovies()}
+            />
           <Route
-            path="/movies/:id" 
-            render={({ match }) => {
-                const { id } = match.params
-                return <MoviePage movieID={id} />
-                
+            path="/:id" render={({ match }) => {
+              const { id } = match.params
+              console.log("MATH PARAMS", id)
+              return <MoviePage movieID={id} className="all-movies" />
             }}
-          />
+            />
         </Switch>
-        {/* <Switch>
-        </Switch> */}
-        </Router>
+      </main>
         )
       }
     }
     {/* <div>
       {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
     </div> */}
-    
+
 // {
 //   this.state.error && <h1>Server is experience error, please try again later.</h1>
 // }
