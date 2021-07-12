@@ -1,7 +1,7 @@
 import React from 'react';
 import Movie from '../Movie/Movie';
 import './AllMovies.css'
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const AllMovies = (props) => {
     if (props.movies === null) {
@@ -9,7 +9,6 @@ const AllMovies = (props) => {
     }
     const moviePosters = props.movies.movies.map(movie => {
         return (
-            <Link to={`/movie/${movie.id}`}>
                 <Movie
                     key={movie.id}
                     id={movie.id}
@@ -18,7 +17,6 @@ const AllMovies = (props) => {
                     rating={movie.average_rating}
                     showMovie={props.showMovie}
                 />
-            </Link>
         )
     })
 

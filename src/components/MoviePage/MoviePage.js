@@ -3,98 +3,139 @@ import Trailer from '../Trailer/Trailer.js';
 import "./MoviePage.css"
 import Rating from '../Rating/Rating.js'
 import { render } from "@testing-library/react";
+import { Link } from "react-router-dom"
 
 class MoviePage extends React.Component {
   constructor() {
-    super() 
+    super()
       this.state = {
-        id: this.props.movieID,
-        info: null
+        id: null,
+        info: null,
+        isLoading: true
       }
-    
-  
-      
+
+
+
     };
-    
+
     componentDidMount() {
       let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-      let movieUrl = url + this.state.id
+      let movieUrl = url + this.props.movieID
       fetch(movieUrl)
       .then(response => response.json())
       .then(data => {
-        this.setState({info: data})
+        this.setState({id: this.props.movieID, info: data, isLoading: false})
       })
     }
-    
+
     renderMovie = () => {
-      const genres = this.props.genres.map(genre=> <div className="genre">{genre}</div>)
-      const styles = {
-      backgroundImage: `url(${this.props.backdrop})`
-      }
-      // const randomTrailer = this.props.trailers[Math.floor(Math.random() * this.props.trailers.length)]
-    // const copy = {...randomTrailer}
-    
-    // console.log('this.props.trailers', this.props.trailers)
-    
-    const formatTime = () => {
-      if (this.props.runtime > 60) {
-        const time = {
-          hours: (Math.floor(this.props.runtime / 60)),
-          minutes: (this.props.runtime % 60)
-        }
-        return `${time.hours} hr ${time.minutes} min`
-      }
-      return `${this.props.runtime} min`
-    }
-    return 
-    // (
-    //   <div className="background-image" style={styles}>
-    //     <div className="info-media">
-    //       <div className="poster-trailers">
-    //         <div className="image-container">
-    //         <img src={this.props.poster}
-    //           className="single-poster"
-    //           height="402px"
-    //           width="268px"/>
-    //         </div>
-    //           <Trailer
-    //             // key={copy.key}
-    //             id={this.props.id}
-    //             title={this.props.title}
-    //             trailers={this.props.trailers}
-    //             />
-    //       </div>
-    //       <div className="movie-info">
-    //         <h1>{this.props.title} <p className="year">({this.props.release.split('-')[0]})</p></h1>
-    //         <Rating rating={this.props.rating} />
-    //         <h2 className="tagline">{this.props.tagline}</h2>
-    //         <p>{!this.props.overview ? "No overview available" : this.props.overview}</p>
-    //         <div className="rating-runtime-genre">
-    //           <div className="runtime-rating">
-    //             <p className="runtime"><strong>{formatTime()}</strong></p>
-    //           </div>
-    //           <div className="genre-container">
-    //             {genres}
-    //           </div>
-    //         </div>
-    //         <button onClick={this.props.goBack}>Go Back</button>
-    //       </div>
-    //     </div>
-    //   </div>
-    // )
+      // const { movie } = this.state.info
+      // console.log("STATE INFO", this.state.info)
+      // console.log("DECON MOVIE", movie)
+      //
+      // const genres = movie.genres.map(genre=> <div className="genre">{genre}</div>)
+      // const styles = {
+      // backgroundImage: `url(${movie.backdrop_path})`
+      // }
+      //
+      // const formatTime = () => {
+      //   if (movie.runtime > 60) {
+      //     const time = {
+      //       hours: (Math.floor(movie.runtime / 60)),
+      //       minutes: (movie.runtime % 60)
+      //     }
+      //     return `${time.hours} hr ${time.minutes} min`
+      //   }
+      //   return `${movie.runtime} min`
+      // }
+
+
   };
 
 
 
 render() {
+
+  const { movie } = this.state.info || {}
+  // console.log("STATE INFO", this.state.info)
+  // console.log("DECON MOVIE", movie)
+
+  const setGenreStyles = (movie) => {
+    if (!movie.genres) {
+      return
+    }
+    const genres = movie.genres.map(genre=> <div className="genre">{genre}</div>)
+    const styles = {
+      backgroundImage: `url(${movie.backdrop_path})`
+    }
+
+    return {
+      g: genres,
+      s: styles
+    }
+  }
+
+//   const genres = movie.genres.map(genre=> <div className="genre">{genre}</div>)
+//   const styles = {
+//   backgroundImage: `url(${movie.backdrop_path})`
+// } || {}
+
+  const formatTime = () => {
+    if (!movie.runtime) {
+      return
+    }
+    if (movie.runtime > 60) {
+      const time = {
+        hours: (Math.floor(movie.runtime / 60)),
+        minutes: (movie.runtime % 60)
+      }
+      return `${time.hours} hr ${time.minutes} min`
+    }
+    return `${movie.runtime} min`
+  }
+
     return (
-      <section> 
-        {
-          this.state.info && this.renderMovie()
-        } 
+      <section>
+        {!this.state.isLoading &&
+
+          <div className="background-image" style={setGenreStyles(movie).s}>
+            <div className="info-media">
+              <div className="poster-trailers">
+                <div className="image-container">
+                <img src={movie.poster_path}
+                  className="single-poster"
+                  height="402px"
+                  width="268px"/>
+                </div>
+                  <Trailer
+                    id={movie.id}
+                    title={movie.title}
+                    />
+              </div>
+              <div className="movie-info">
+                <h1>{movie.title} <p className="year">({movie.release_date.split('-')[0]})</p></h1>
+                <Rating rating={movie.average_rating} />
+                <h2 className="tagline">{movie.tagline}</h2>
+                <p>{!movie.overview ? "No overview available" : movie.overview}</p>
+                <div className="rating-runtime-genre">
+                  <div className="runtime-rating">
+                    <p className="runtime"><strong>{formatTime()}</strong></p>
+                  </div>
+                  <div className="genre-container">
+                    {setGenreStyles(movie).g}
+                  </div>
+                </div>
+                <Link to="/">
+                  <button>Go Back</button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+        }
       </section>
     )
-  } 
+  }
 }
 
 export default MoviePage
