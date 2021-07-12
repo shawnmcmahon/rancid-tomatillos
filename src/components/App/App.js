@@ -3,6 +3,12 @@ import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
+import {
+        BrowserRouter as Router,
+        Switch,
+        Route,
+        Link
+      } from "react-router-dom";
 
 // import Search from '../Search/Search'
 import './App.css';
@@ -92,18 +98,33 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <header><h1>Rancid Tomatillos</h1></header><br />
-        {
-          this.state.error && <h1>Server is experience error, please try again later.</h1>
-        }
-
-        {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
-      </div>
-    )
-  }
-}
-
+      <Router basename="/">
+          <header><h1>Rancid Tomatillos</h1></header><br />
+        <Switch>
+          <Route path="/" render={() =>  this.renderAllMovies()}
+          />
+          <Route
+            path="/movies/:id" 
+            render={({ match }) => {
+                const { id } = match.params
+                return <MoviePage movieID={id} />
+                
+            }}
+          />
+        </Switch>
+        {/* <Switch>
+        </Switch> */}
+        </Router>
+        )
+      }
+    }
+    {/* <div>
+      {!this.state.currentMovie ? this.renderAllMovies() : this.renderMoviePage()}
+    </div> */}
+    
+// {
+//   this.state.error && <h1>Server is experience error, please try again later.</h1>
+// }
 // {!this.state.movies.movies &&
 //   <h2> Loading Movies... </h2>
 
