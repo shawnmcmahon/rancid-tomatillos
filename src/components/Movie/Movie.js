@@ -19,7 +19,7 @@ class Movie extends React.Component {
         // console.log("RATING", rating, "STARS", stars)
         return (
             <div>
-              <Link to={`${this.props.id}`}>
+              <Link name={this.props.title} to={`${this.props.id}`}>
                 <img src={this.props.poster} className="movie" id={this.props.id} alt={this.props.title} />
               </Link>
               <Rating rating={this.props.rating} />
