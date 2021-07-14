@@ -14,6 +14,12 @@ header h1 {
   color: white;
 }
 
+.loading {
+  margin-top: 8em;
+  text-align: center;
+  color: black;
+}
+
 
 /* .App {
   text-align: center;

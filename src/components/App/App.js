@@ -63,6 +63,7 @@ class App extends React.Component {
   renderAllMovies = () => {
     return (
       <main className="App">
+        {this.state.isLoading && <h2 className="loading">Loading...</h2>}
         <AllMovies
           movies={!this.state.isLoading ? this.state.movies : null}
           showMovie={this.showMovie}
@@ -107,10 +108,9 @@ class App extends React.Component {
             path="/:id" render={({ match }) => {
               const { id } = match.params
               if (!this.state.movies.length) {
-                console.log("NOT LOADED")
                 return (
                   <div>
-                    <h2>Loading...</h2>
+                    <h2 className="loading">Loading...</h2>
                   </div>
                 )
               }

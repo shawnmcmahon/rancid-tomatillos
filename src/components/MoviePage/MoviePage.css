@@ -2,7 +2,7 @@ button {
   position: relative;
   margin-top: 5%;
   margin-bottom: 5%;
-  width: 88%;
+  width: 200px;
   height: 40px;
   background: none;
   border: 1px solid white;
@@ -17,7 +17,7 @@ button {
   background-position: center;
   height: 100vh;
   place-items: center;
-
+  overflow: scroll;
 }
 
 .info-media {
@@ -34,8 +34,8 @@ button {
 
 
 .background-image h1 {
-  font-size: 60px;
-  margin: 0;
+  font-size: 40px;
+  font-size: 4.5vw;
 }
 
 .genre {
@@ -81,7 +81,7 @@ button {
   font-size: 22px;
   background: rgba(0,0,0, 0.82);
   border-radius: 8px;
-  height: 90%;
+  min-height: 80vh;
   margin-top: 4.2em;
   margin-left: 1em;
   word-wrap: break-word;
@@ -128,9 +128,62 @@ button {
 .year {
   display: inline;
   color: #D8D8E3;
-  font-size: 54px;
+  font-size: 38px;
+  font-size: 4.4vw;
 }
 /* .backdrop {
   width: 1280px;
   height: 720px;
 } */
+
+
+
+
+
+@media screen and (max-width: 900px) {
+
+  .rating-runtime-genre {
+    flex-direction: column;
+  }
+
+}
+
+
+
+@media screen and (max-width: 743px) {
+
+  .background-image {
+    overflow-x: hidden;
+  }
+  .info-media {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+  .poster-trailers {
+    /* margin-left: 8em;
+    margin-top: 6em;
+    margin-right: -5%; */
+    margin-left: 1.5em;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+    /* flex-direction: column;
+    align-items: center;
+    justify-content: space-between; */
+  }
+  .rating-runtime-genre {
+    flex-direction: column;
+  }
+
+  .movie-info {
+    width: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+}
