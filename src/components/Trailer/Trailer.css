@@ -14,3 +14,12 @@ iframe {
   top: 0;
   left: 0;
 }
+
+
+@media screen and (max-width: 743px) {
+
+  .video-responsive {
+    width: 100%;
+  }
+
+}

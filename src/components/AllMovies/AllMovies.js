@@ -7,7 +7,7 @@ const AllMovies = (props) => {
     if (props.movies === null) {
         return null
     }
-    const moviePosters = props.movies.movies.map(movie => {
+    const moviePosters = props.movies.map(movie => {
         return (
                 <Movie
                     key={movie.id}

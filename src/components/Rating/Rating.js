@@ -29,7 +29,7 @@ const Rating = (props) => {
   // }, [])
 
   return (
-    <h3>{allStars}</h3>
+    <h2>{allStars}</h2>
   )
 }
 

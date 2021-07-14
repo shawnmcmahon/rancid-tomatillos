@@ -1,11 +1,13 @@
 import React from 'react';
 import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
+import ErrorComponent from '../ErrorComponent/ErrorComponent';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import {
         Switch,
         Route,
+        Redirect,
       } from "react-router-dom";
 
 // import Search from '../Search/Search'
@@ -32,7 +34,7 @@ class App extends React.Component {
     const url2 = 'https://httpstat.us/500'
     fetch(url)
     .then(this.checkForError)
-    .then(data => this.setState({movies : data, isLoading : false}))
+    .then(data => this.setState({movies : data.movies, isLoading : false}))
     .catch(error => console.log('Something went wrong:', error))
   }
 
@@ -61,6 +63,7 @@ class App extends React.Component {
   renderAllMovies = () => {
     return (
       <main className="App">
+        {this.state.isLoading && <h2 className="loading">Loading...</h2>}
         <AllMovies
           movies={!this.state.isLoading ? this.state.movies : null}
           showMovie={this.showMovie}
@@ -104,10 +107,23 @@ class App extends React.Component {
           <Route
             path="/:id" render={({ match }) => {
               const { id } = match.params
-              console.log("MATH PARAMS", id)
-              return <MoviePage movieID={id} className="all-movies" />
+              if (!this.state.movies.length) {
+                return (
+                  <div>
+                    <h2 className="loading">Loading...</h2>
+                  </div>
+                )
+              }
+              else {
+                const found = this.state.movies.find(movie => movie.id === parseInt(id))
+                if (found) {
+                  return <MoviePage movieID={id} className="all-movies" />
+                }
+                return <ErrorComponent />
+              }
             }}
             />
+          // <Route path="*" component={ErrorComponent} />
         </Switch>
       </main>
         )

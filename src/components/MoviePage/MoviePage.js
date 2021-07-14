@@ -96,6 +96,7 @@ render() {
 
     return (
       <section>
+        {this.state.isLoading && <h2 className="loading">Loading...</h2>}
         {!this.state.isLoading &&
 
           <div className="background-image" style={setGenreStyles(movie).s}>
