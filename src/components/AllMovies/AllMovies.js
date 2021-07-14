@@ -3,6 +3,7 @@ import Movie from '../Movie/Movie';
 import './AllMovies.css'
 // import { Link } from "react-router-dom";
 import PropTypes from 'prop-types';
+import ErrorComponent from '../ErrorComponent/ErrorComponent';
 
 
 class AllMovies extends React.Component {
@@ -10,7 +11,8 @@ class AllMovies extends React.Component {
     super()
     this.state = {
       movies: [],
-      isLoading: true
+      isLoading: true,
+      error: false
     }
   }
 
@@ -19,7 +21,7 @@ class AllMovies extends React.Component {
     fetch(url)
     .then(this.checkForError)
     .then(data => this.setState({movies : data.movies, isLoading : false}))
-    .catch(error => console.log('Something went wrong:', error))
+    .catch(error => this.setState({error: true, isLoading: false}))
   }
 
   checkForError = (response) => {
@@ -49,6 +51,7 @@ class AllMovies extends React.Component {
   return (
 
     <div>
+      {this.state.error && <ErrorComponent type="500" />}
       {this.state.isLoading && <h2 className="loading">Loading...</h2>}
       <div className='all-movies-container'>
         {moviePosters}
