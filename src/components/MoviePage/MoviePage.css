@@ -1,13 +1,18 @@
 button {
   position: relative;
   margin-top: 5%;
-  margin-bottom: 5%;
-  width: 200px;
+  margin-bottom: 15%;
+  width: 20vw;
   height: 40px;
   background: none;
   border: 1px solid white;
   color: white;
   cursor: pointer;
+}
+
+h1, h2 {
+  margin: 2% 0;
+
 }
 
 .background-image {
@@ -76,15 +81,16 @@ button {
   align-items: flex-start;
   color: white;
   padding: 1em 2em;
-  width: 50%;
+  width: 50vw;
   text-align: left;
-  font-size: 22px;
+  font-size: 2vh;
   background: rgba(0,0,0, 0.82);
   border-radius: 8px;
-  min-height: 80vh;
+  /* min-height: 80vh; */
   margin-top: 4.2em;
   margin-left: 1em;
   word-wrap: break-word;
+  overflow-y: auto;
 }
 
 
@@ -184,6 +190,7 @@ button {
     width: auto;
     margin-top: 0;
     margin-left: 0;
+    overflow-y: inherit;
   }
 
 }

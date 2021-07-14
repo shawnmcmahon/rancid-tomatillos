@@ -116,7 +116,10 @@ render() {
               <div className="movie-info">
                 <h1>{movie.title} <p className="year">({movie.release_date.split('-')[0]})</p></h1>
                 <Rating rating={movie.average_rating} />
-                <h2 className="tagline">{movie.tagline}</h2>
+                { 
+                  movie.tagline && <h2 className="tagline">{movie.tagline}</h2>
+                }
+                {/* <h2 className="tagline">{movie.tagline}</h2> */}
                 <p>{!movie.overview ? "No overview available" : movie.overview}</p>
                 <div className="rating-runtime-genre">
                   <div className="runtime-rating">
