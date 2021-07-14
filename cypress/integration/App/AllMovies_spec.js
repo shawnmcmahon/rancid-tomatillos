@@ -40,7 +40,7 @@ describe('Rotten Tomatillos', () => {
     cy.contains("Action")
   })
 
-  it('Should be able to use the back button within the browser', () => {
+  it('Should be able to use the back and forward buttons within the browser', () => {
     cy.visit('http://localhost:3000/337401')
     cy.go('back')
     cy.url().should('eq','http://localhost:3000/')

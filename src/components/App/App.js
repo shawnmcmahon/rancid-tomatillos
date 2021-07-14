@@ -9,6 +9,7 @@ import {
         Route,
         Redirect,
       } from "react-router-dom";
+import PropTypes from 'prop-types';
 
 // import Search from '../Search/Search'
 import './App.css';
@@ -66,7 +67,6 @@ class App extends React.Component {
         {this.state.isLoading && <h2 className="loading">Loading...</h2>}
         <AllMovies
           movies={!this.state.isLoading ? this.state.movies : null}
-          showMovie={this.showMovie}
 
         />
       </main>
@@ -77,25 +77,6 @@ class App extends React.Component {
     this.setState({currentMovie: "", currentTrailers: ""})
   }
 
-  renderMoviePage() {
-    return (
-      <MoviePage
-        className="all-movies"
-        id={this.state.currentMovie.movie.id}
-        title={this.state.currentMovie.movie.title}
-        overview={this.state.currentMovie.movie.overview}
-        tagline={this.state.currentMovie.movie.tagline}
-        backdrop={this.state.currentMovie.movie.backdrop_path}
-        genres={this.state.currentMovie.movie.genres}
-        runtime={this.state.currentMovie.movie.runtime}
-        rating={this.state.currentMovie.movie.average_rating}
-        goBack={this.backToMain}
-        release={this.state.currentMovie.movie.release_date}
-        trailers={this.state.currentTrailers}
-        poster={this.state.currentMovie.movie.poster_path}
-      />
-    )
-  }
 
   render() {
     return (
@@ -141,3 +122,10 @@ class App extends React.Component {
 
 // }
 export default App;
+
+MoviePage.PropTypes = {
+  movieID: PropTypes.string, 
+
+}
+
+
