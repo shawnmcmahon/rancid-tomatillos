@@ -64,17 +64,9 @@ class App extends React.Component {
   renderAllMovies = () => {
     return (
       <main className="App">
-        {this.state.isLoading && <h2 className="loading">Loading...</h2>}
-        <AllMovies
-          movies={!this.state.isLoading ? this.state.movies : null}
-
-        />
+        <AllMovies />
       </main>
     );
-  }
-
-  backToMain = () => {
-    this.setState({currentMovie: "", currentTrailers: ""})
   }
 
 
@@ -123,9 +115,7 @@ class App extends React.Component {
 // }
 export default App;
 
-MoviePage.PropTypes = {
-  movieID: PropTypes.string, 
+MoviePage.propTypes = {
+  movieID: PropTypes.string,
 
 }
-
-
