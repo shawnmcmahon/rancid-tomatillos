@@ -4,55 +4,88 @@ import "./MoviePage.css"
 import Rating from '../Rating/Rating.js'
 import { render } from "@testing-library/react";
 import { Link } from "react-router-dom"
+import ErrorComponent from "../ErrorComponent/ErrorComponent";
 
 class MoviePage extends React.Component {
   constructor() {
     super()
       this.state = {
         id: null,
-        info: null,
-        isLoading: true
+        info: undefined,
+        isLoading: true,
+        error: false
       }
-
+      this.valid = [ 694919,
+        337401,
+        718444,
+        539885,
+        581392,
+        726739,
+        627290,
+        613504,
+        659986,
+        632618,
+        446893,
+        508439,
+        479259,
+        592350,
+        531876,
+        499932,
+        413518,
+        577922,
+        619592,
+        501979,
+        340102,
+        605499,
+        737568,
+        400160,
+        579583,
+        597398,
+        617708,
+        528085,
+        610201,
+        550231,
+        737173,
+        737799,
+        500840,
+        547017,
+        449924,
+        425001,
+        582885,
+        659991,
+        501953,
+        585244 ];
 
 
     };
 
     componentDidMount() {
       let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-      let movieUrl = url + this.props.movieID
-      fetch(movieUrl)
-      .then(response => response.json())
-      .then(data => {
-        this.setState({id: this.props.movieID, info: data, isLoading: false})
+      console.log("this.props.movieID", this.props.movieID)
+      if (!this.valid.includes(parseInt(this.props.movieID))) {
+        this.setState({error: true, isLoading: false})
+      }
+      else {
+        let movieUrl = url + this.props.movieID;
+        fetch(movieUrl)
+        .then(this.checkForError)
+        .then(data => {
+          this.setState({id: this.props.movieID, info: data, isLoading: false})
       })
+      }
+      
     }
 
-    renderMovie = () => {
-      // const { movie } = this.state.info
-      // console.log("STATE INFO", this.state.info)
-      // console.log("DECON MOVIE", movie)
-      //
-      // const genres = movie.genres.map(genre=> <div className="genre">{genre}</div>)
-      // const styles = {
-      // backgroundImage: `url(${movie.backdrop_path})`
-      // }
-      //
-      // const formatTime = () => {
-      //   if (movie.runtime > 60) {
-      //     const time = {
-      //       hours: (Math.floor(movie.runtime / 60)),
-      //       minutes: (movie.runtime % 60)
-      //     }
-      //     return `${time.hours} hr ${time.minutes} min`
-      //   }
-      //   return `${movie.runtime} min`
-      // }
-
-
-  };
-
-
+    checkForError = (response) => {
+      console.log(response)
+      if (!response.ok) {
+        const statusCode = response.status;
+        this.setState({ error: true, isLoading: false});
+        throw new Error(`Something went wrong, please try again. Error Code: ${statusCode}`)
+      } else {
+        return response.json()
+      }
+    }
 
 render() {
 
@@ -96,9 +129,9 @@ render() {
 
     return (
       <section>
-        {this.state.isLoading && <h2 className="loading">Loading...</h2>}
-        {!this.state.isLoading &&
-
+        {this.state.isLoading && !this.state.error && <h2 className="loading">Loading...</h2>}
+        {!this.state.isLoading && this.state.error && <ErrorComponent type="404" />}
+        {!this.state.isLoading && !this.state.error && 
           <div className="background-image" style={setGenreStyles(movie).s}>
             <div className="info-media">
               <div className="poster-trailers">

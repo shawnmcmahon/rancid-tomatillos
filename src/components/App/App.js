@@ -28,7 +28,7 @@ const App = () => {
             const { id } = match.params
             const regex = new RegExp('\d')
             if (regex.test(id.toString())) {
-              return <ErrorComponent type="400" />
+              return <ErrorComponent type="404" />
             }
             return <MoviePage movieID={id} className="all-movies" />
           }}
