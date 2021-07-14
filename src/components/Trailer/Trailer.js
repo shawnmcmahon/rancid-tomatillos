@@ -6,11 +6,10 @@ class Trailer extends React.Component {
   constructor() {
     super()
     this.state = {
-      trailers: ''
-      
+      trailers: '',
     }
   }
-  
+
   componentDidMount() {
     let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
     let movieUrl = url + this.props.id + '/videos/'
@@ -19,10 +18,10 @@ class Trailer extends React.Component {
     .then(data => {
       this.setState({trailers: data.videos})
     })
-    
+
   }
-  
-  
+
+
   render() {
     const getRandomTrailerKey = () => {
       const randomTrailer = this.state.trailers[Math.floor(Math.random() * this.state.trailers.length)];
@@ -31,9 +30,9 @@ class Trailer extends React.Component {
       return copy.key;
     }
       return (
-        <div className="video-responsive">  
+        <div className="video-responsive">
           {
-            this.state.trailers &&  
+            this.state.trailers &&
             <iframe
               src={"http://www.youtube.com/embed/" + getRandomTrailerKey()}
               width="560"
@@ -45,9 +44,9 @@ class Trailer extends React.Component {
               >
             </iframe>
           }
-         
+
         </div>
-    
+
       )
 
       }
@@ -55,4 +54,4 @@ class Trailer extends React.Component {
 
 }
 
-export default Trailer; 
+export default Trailer;
