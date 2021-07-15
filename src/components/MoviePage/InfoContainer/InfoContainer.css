@@ -1,0 +1,82 @@
+.movie-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  color: white;
+  padding: 1em 2em;
+  width: 44vw;
+  text-align: left;
+  font-size: 2vh;
+  background: rgba(0,0,0, 0.82);
+  border-radius: 8px;
+  margin-top: 4.2em;
+  margin-left: 1em;
+  word-wrap: break-word;
+  overflow-y: auto;
+}
+
+.year {
+  display: inline;
+  color: #D8D8E3;
+  font-size: 38px;
+  font-size: 4.4vw;
+}
+
+.rating-runtime-genre {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.runtime-rating {
+  display: flex;
+  padding-bottom: 3%;
+}
+
+.runtime-rating p {
+  margin: 0;
+}
+
+.runtime {
+  font-size: 18px;
+}
+
+.genre-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 3%;
+  width: 50%;
+}
+
+@media screen and (max-width: 900px) {
+
+  .rating-runtime-genre {
+    flex-direction: column;
+  }
+
+}
+
+@media screen and (max-width: 743px) {
+
+  .background-image {
+    overflow-x: hidden;
+  }
+  .info-media {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .rating-runtime-genre {
+    flex-direction: column;
+  }
+
+  .movie-info {
+    width: auto;
+    margin-top: 0;
+    margin-left: 0;
+    overflow-y: inherit;
+  }
+
+}

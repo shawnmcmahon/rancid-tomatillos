@@ -20,8 +20,7 @@ const App = () => {
     <main>
       <header><h1>Rancid Tomatillos</h1></header><br />
       <Switch>
-        <Route exact path="/" component={AllMovies}
-          />
+        <Route exact path="/" component={AllMovies} />
         <Route
           path="/:id" render={({ match }) => {
             const { id } = match.params
@@ -31,7 +30,7 @@ const App = () => {
             }
             return <MoviePage movieID={id} className="all-movies" />
           }}
-          />
+        />
       </Switch>
     </main>
   )
