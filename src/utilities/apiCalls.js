@@ -17,7 +17,6 @@ const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
   } else {
-    const statusCode = response.status;
     throw new Error(`Request could not go through.`)
   }
 }

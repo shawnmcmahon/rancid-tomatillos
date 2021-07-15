@@ -7,7 +7,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import {
         Switch,
         Route,
-        Redirect,
       } from "react-router-dom";
 import PropTypes from 'prop-types';
 
