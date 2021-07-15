@@ -1,12 +1,13 @@
 import React from "react"
 
-const ErrorComponent = () => {
+const ErrorComponent = ({ type }) => {
   return (
     <div>
       <br />
       <br />
-      <h1>404 Error</h1>
-      <h3>The URL you typed was invalid</h3>
+      <br />
+      <h1> { type } Error</h1>
+      <h3>Oops! Something went wrong.</h3>
     </div>
   )
 }
