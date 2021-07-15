@@ -13,67 +13,52 @@ class MoviePage extends React.Component {
         id: null,
         info: undefined,
         isLoading: true,
-        error: false
+        error: false,
+        valid: []
       }
-      this.valid = [ 694919,
-        337401,
-        718444,
-        539885,
-        581392,
-        726739,
-        627290,
-        613504,
-        659986,
-        632618,
-        446893,
-        508439,
-        479259,
-        592350,
-        531876,
-        499932,
-        413518,
-        577922,
-        619592,
-        501979,
-        340102,
-        605499,
-        737568,
-        400160,
-        579583,
-        597398,
-        617708,
-        528085,
-        610201,
-        550231,
-        737173,
-        737799,
-        500840,
-        547017,
-        449924,
-        425001,
-        582885,
-        659991,
-        501953,
-        585244 ];
-
-
     };
+
+    // getUniqueIds = () => {
+    //   let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
+    //   fetch(url)
+    //     .then(this.checkForError)
+    //     .then(data => {
+    //
+    //       this.setState({valid: data.movies.map(movie => movie.id)})
+    //       if (!this.state.valid.includes(parseInt(this.props.movieID))) {
+    //         this.setState({error: true, isLoading: false})
+    //       }
+    //       else {
+    //         let movieUrl = url + this.props.movieID;
+    //         fetch(movieUrl)
+    //         .then(this.checkForError)
+    //         .then(data => {
+    //           this.setState({id: this.props.movieID, info: data, isLoading: false})
+    //       })
+    //       }
+    //     }
+    //   )
+    // }
 
     componentDidMount() {
       let url = 'https://rancid-tomatillos.herokuapp.com/api/v2/movies/';
-      console.log("this.props.movieID", this.props.movieID)
-      if (!this.valid.includes(parseInt(this.props.movieID))) {
-        this.setState({error: true, isLoading: false})
-      }
-      else {
-        let movieUrl = url + this.props.movieID;
-        fetch(movieUrl)
+      fetch(url)
         .then(this.checkForError)
         .then(data => {
-          this.setState({id: this.props.movieID, info: data, isLoading: false})
-      })
-      }
-      
+          this.setState({valid: data.movies.map(movie => movie.id)})
+          if (!this.state.valid.includes(parseInt(this.props.movieID))) {
+            this.setState({error: true, isLoading: false})
+          }
+          else {
+            let movieUrl = url + this.props.movieID;
+            fetch(movieUrl)
+            .then(this.checkForError)
+            .then(data => {
+              this.setState({id: this.props.movieID, info: data, isLoading: false})
+            })
+          }
+        }
+      )
     }
 
     checkForError = (response) => {
@@ -131,7 +116,7 @@ render() {
       <section>
         {this.state.isLoading && !this.state.error && <h2 className="loading">Loading...</h2>}
         {!this.state.isLoading && this.state.error && <ErrorComponent type="404" />}
-        {!this.state.isLoading && !this.state.error && 
+        {!this.state.isLoading && !this.state.error &&
           <div className="background-image" style={setGenreStyles(movie).s}>
             <div className="info-media">
               <div className="poster-trailers">
@@ -149,7 +134,7 @@ render() {
               <div className="movie-info">
                 <h1>{movie.title} <p className="year">({movie.release_date.split('-')[0]})</p></h1>
                 <Rating rating={movie.average_rating} />
-                { 
+                {
                   movie.tagline && <h2 className="tagline">{movie.tagline}</h2>
                 }
                 {/* <h2 className="tagline">{movie.tagline}</h2> */}
