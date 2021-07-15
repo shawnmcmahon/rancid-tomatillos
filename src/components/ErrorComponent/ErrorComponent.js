@@ -8,8 +8,11 @@ const ErrorComponent = ({ type, message }) => {
       <br />
       <br />
       <h1> { type } Error</h1>
-      <h3>Oops! Something went wrong. <Link to="/">Click here to go back home.</Link></h3>
-      <h4>{message}</h4>
+      {type === "500" && <h3>Oops! Server is experiencing issues. Please try again later.</h3>}
+      {type !== "500" &&
+        <h3>Oops! Something went wrong. <Link to="/">Click here to go back home.</Link></h3>
+      }
+      {message && <h4>{message}</h4>}
     </div>
   )
 }

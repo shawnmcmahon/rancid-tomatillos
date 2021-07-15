@@ -99,7 +99,6 @@ render() {
             </div>
           </div>
         </div>
-
       }
     </section>
   )
