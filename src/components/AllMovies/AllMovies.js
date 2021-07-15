@@ -12,19 +12,14 @@ class AllMovies extends React.Component {
     super()
     this.state = {
       movies: [],
-      isLoading: true,
       error: false
     }
   }
 
   componentDidMount = () => {
     getAllMovies()
-    .then(data => this.setState({movies : data.movies, isLoading : false}))
-    .catch(error => this.setState({error: true, isLoading: false}))
-  }
-
-  render() {
-    const moviePosters = this.state.movies.map(movie => {
+    .then(data => this.setState({
+      movies : data.movies.map(movie => {
         return (
           <Movie
               key={movie.id}
@@ -34,15 +29,31 @@ class AllMovies extends React.Component {
               rating={movie.average_rating}
           />
         )
-    })
+      })
+    }))
+    .catch(error => this.setState({error: true}))
+  }
+
+  render() {
+    // const moviePosters = this.state.movies.map(movie => {
+    //   return (
+    //     <Movie
+    //         key={movie.id}
+    //         id={movie.id}
+    //         poster={movie.poster_path}
+    //         title={movie.title}
+    //         rating={movie.average_rating}
+    //     />
+    //   )
+    // })
 
   return (
 
     <div>
       {this.state.error && <ErrorComponent type="500" />}
-      {this.state.isLoading && <h2 className="loading">Loading...</h2>}
+      {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
       <div className='all-movies-container'>
-        {moviePosters}
+        {this.state.movies}
       </div>
     </div>
     )

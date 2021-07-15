@@ -8,13 +8,18 @@ const getMovie = (id) => {
   .then(checkResponse)
 }
 
+const getTrailers = (id) => {
+  return fetch(`https://rancid-tomatillos.herokuapp.com/api/v2/movies/${id}/videos/`)
+  .then(checkResponse)
+}
+
 const checkResponse = (response) => {
   if (response.ok) {
     return response.json()
   } else {
     const statusCode = response.status;
-    throw new Error(`Request could not go through. Status code: ${statusCode}`)
+    throw new Error(`Request could not go through.`)
   }
 }
 
-export { getAllMovies, getMovie }
+export { getAllMovies, getMovie, getTrailers }
