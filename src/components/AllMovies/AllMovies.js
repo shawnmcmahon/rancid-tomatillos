@@ -37,12 +37,27 @@ class AllMovies extends React.Component {
   .catch(error => this.setState({error: true}))
   }
 
+  updateMoviesState = (searchResults) => {
+      this.setState({ movies : searchResults.map(movie => {
+        return (
+          <Movie
+              key={movie.id}
+              id={movie.id}
+              poster={movie.poster_path}
+              title={movie.title}
+              rating={movie.average_rating}
+          />
+        )
+      })
+    })
+  }
+
   render() {
     return (
       <div className="all-container">
         {this.state.error && <ErrorComponent type="500" />}
         {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
-        <Search rawData={this.state.rawData}/>
+        <Search rawData={this.state.rawData} updateMovies={this.updateMoviesState}/>
         <div className='all-movies-container'>
           {this.state.movies}
         </div>
@@ -58,5 +73,6 @@ Movie.propTypes = {
     poster: PropTypes.string,
     title: PropTypes.string,
     rating: PropTypes.number,
-    rawData: PropTypes.array
+    rawData: PropTypes.array,
+    updateMovies: PropTypes.func
 }

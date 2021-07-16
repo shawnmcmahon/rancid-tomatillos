@@ -19,9 +19,10 @@ class Search extends React.Component {
     // filter the rawData by using the searchQuery to make our condition 
     // event.preventDefault();
       const results = this.props.rawData.filter(currentMovie => currentMovie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()));
-      if (results) {
-        this.setState( { searchResults: results} );
-      }
+      // if (results) {
+      //   this.setState( { searchResults: results} );
+      // }
+      this.props.updateMovies(results);
   }
 
 
