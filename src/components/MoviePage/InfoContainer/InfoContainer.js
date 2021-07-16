@@ -3,9 +3,9 @@ import Rating from '../../Rating/Rating.js';
 import { Link } from "react-router-dom"
 import './InfoContainer.css'
 
-const InfoContainer = ({ title, release, rating, tagline, overview, stylize, runtime }) => {
+const InfoContainer = ({ title, release, rating, tagline, overview, stylize, runtime, id }) => {
   return (
-    <div className="movie-info">
+    <div key={id} className="movie-info">
       <h1>{title} <p className="year">({release.split('-')[0]})</p></h1>
       <Rating rating={rating} />
       {tagline && <h2>{tagline}</h2>}

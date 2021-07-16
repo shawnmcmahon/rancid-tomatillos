@@ -1,4 +1,21 @@
+form {
+  margin: 0 auto;
+  width: 60vw;
+  text-align: center;
+}
+
+form > button {
+  margin: 0;
+}
+
 input {
   margin-top: 9em;
   width: 30vw;
+}
+
+.search {
+  margin-left: 2%;
+  background: lightgray;
+  color: black;
+  min-width: 100px;
 }

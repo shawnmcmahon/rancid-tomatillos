@@ -24,7 +24,7 @@ class MoviePage extends React.Component {
   }
 
   setGenreStyles = (movieGenres, backdrop) => {
-    const genres = movieGenres.map(genre=> <div className="genre">{genre}</div>)
+    const genres = movieGenres.map((genre, index)=> <div key={index} className="genre">{genre}</div>)
     const styles = {
       backgroundImage: `url(${backdrop})`
     }
@@ -57,6 +57,7 @@ class MoviePage extends React.Component {
             <div className="info-media">
               <MediaContainer poster={poster_path} id={id} title={title} />
               <InfoContainer
+                id={id}
                 title={title}
                 release={release_date}
                 rating={average_rating}

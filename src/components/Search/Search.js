@@ -1,46 +1,67 @@
-import React from 'react'; 
+import React from 'react';
 import './Search.css'
 
 class Search extends React.Component {
   constructor(props) {
-    super(props) 
+    super(props)
       this.state = {
-        searchQuery: '', 
-        searchResults: []
+        searchQuery: '',
+        searchResults: this.props.data
       }
   }
 
   handleChange = (event) => {
-    this.setState({ searchQuery: event.target.value})
-    this.search()
+    event.preventDefault()
+    this.setState({ searchQuery: ''})
+    const { value } = event.target
+    this.setState({ searchQuery: value })
   }
 
   search = () => {
-    // filter the rawData by using the searchQuery to make our condition 
-    // event.preventDefault();
-      const results = this.props.rawData.filter(currentMovie => currentMovie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()));
-      // if (results) {
-      //   this.setState( { searchResults: results} );
-      // }
-      this.props.updateMovies(results);
+    // let results = [...this.state.searchResults];
+    let results = this.props.data.filter(movie => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
+    this.setState({searchResults: results})
+    this.props.updateMovies(results)
+
   }
 
+  reset = () => {
+    this.setState({searchResults: this.props.data})
+    this.props.updateMovies(this.state.searchResults)
+  }
 
+  handleKeyPress = (event) => {
+    if (event.keyCode === 13) {
+      event.preventDefault()
+      console.log(event.keyCode)
+      this.search();
+    }
+  }
 
+  onFormSubmit = (event) => {
+    event.preventDefault();
+    this.search();
+  }
+
+  // <label htmlFor="search">Search for movies
+  //
+  // </label>
   render() {
     return (
-      <> 
-        <label for="search"></label>
-        <input 
-          type="text" 
-          name="search" 
-          value={this.state.searchQuery} 
-          onChange={(event) => this.handleChange(event)}
+      <form onSubmit={this.onFormSubmit}>
+        <input
+          id="search"
+          type="text"
+          name="search"
+          value={this.state.searchQuery}
+          onChange={this.handleChange}
         />
-      </> 
+      <button type="submit" className="search" onClick={this.search}>Search</button>
+
+      </form>
     )
   }
 }
 
 
-export default Search; 
+export default Search;
