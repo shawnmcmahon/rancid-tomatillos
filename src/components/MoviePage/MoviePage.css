@@ -12,7 +12,6 @@ button {
 
 h1, h2 {
   margin: 2% 0;
-
 }
 
 .background-image {
@@ -32,11 +31,6 @@ h1, h2 {
   margin-top: -6em;
 }
 
-.blur {
-  filter: blur(4px);
-}
-
-
 
 .background-image h1 {
   font-size: 40px;
@@ -50,112 +44,6 @@ h1, h2 {
   border-radius: 12px;
 }
 
-.genre-container {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 3%;
-  width: 50%;
-}
-
-.runtime-rating {
-  display: flex;
-  padding-bottom: 3%;
-  /* flex-direction: column; */
-}
-
-.runtime-rating p {
-  margin: 0;
-}
-
-.rating-runtime-genre {
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-  align-items: center;
-  width: 100%;
-}
-
-.movie-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  color: white;
-  padding: 1em 2em;
-  width: 50vw;
-  text-align: left;
-  font-size: 2vh;
-  background: rgba(0,0,0, 0.82);
-  border-radius: 8px;
-  /* min-height: 80vh; */
-  margin-top: 4.2em;
-  margin-left: 1em;
-  word-wrap: break-word;
-  overflow-y: auto;
-}
-
-
-.single-poster {
-  /* height: 402px;
-  width: 268px; */
-  height: 133%;
-  width: 90%;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-
-.runtime {
-  font-size: 18px;
-}
-
-.image-container {
-  padding-bottom: 67%;
-  height: 0;
-  width: 80%;
-  position: relative;
-}
-
-.poster-trailers {
-  margin-left: 8em;
-  margin-top: 6em;
-  margin-right: -5%;
-  width: 35%;
-  height: 90%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-
-/* .tagline {
-  text-align: center;
-} */
-
-.year {
-  display: inline;
-  color: #D8D8E3;
-  font-size: 38px;
-  font-size: 4.4vw;
-}
-/* .backdrop {
-  width: 1280px;
-  height: 720px;
-} */
-
-
-
-
-
-@media screen and (max-width: 900px) {
-
-  .rating-runtime-genre {
-    flex-direction: column;
-  }
-
-}
-
-
-
 @media screen and (max-width: 743px) {
 
   .background-image {
@@ -164,33 +52,6 @@ h1, h2 {
   .info-media {
     flex-direction: column;
     align-items: center;
-  }
-
-  .image-container {
-    display: none;
-  }
-
-  .poster-trailers {
-    /* margin-left: 8em;
-    margin-top: 6em;
-    margin-right: -5%; */
-    margin-left: 1.5em;
-    width: 80%;
-    height: 90%;
-    align-items: center;
-    /* flex-direction: column;
-    align-items: center;
-    justify-content: space-between; */
-  }
-  .rating-runtime-genre {
-    flex-direction: column;
-  }
-
-  .movie-info {
-    width: auto;
-    margin-top: 0;
-    margin-left: 0;
-    overflow-y: inherit;
   }
 
 }

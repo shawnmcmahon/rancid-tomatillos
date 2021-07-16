@@ -7,7 +7,6 @@ import { faStar } from '@fortawesome/free-solid-svg-icons'
 import {
         Switch,
         Route,
-        Redirect,
       } from "react-router-dom";
 import PropTypes from 'prop-types';
 
@@ -19,20 +18,19 @@ const App = () => {
 
   return (
     <main>
-      <header><h1>Rancid Tomatillos</h1></header><br />
+      <header><h1>Rancid Tomatillos</h1></header>
       <Switch>
-        <Route exact path="/" component={AllMovies}
-          />
+        <Route exact path="/" component={AllMovies} />
         <Route
           path="/:id" render={({ match }) => {
             const { id } = match.params
-            const regex = new RegExp('\d')
+            const regex = new RegExp('/d')
             if (regex.test(id.toString())) {
               return <ErrorComponent type="404" />
             }
             return <MoviePage movieID={id} className="all-movies" />
           }}
-          />
+        />
       </Switch>
     </main>
   )

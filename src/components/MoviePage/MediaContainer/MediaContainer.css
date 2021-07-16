@@ -1,0 +1,41 @@
+.poster-trailers {
+  margin-left: 8em;
+  margin-top: 6em;
+  margin-right: -5%;
+  width: 35vw;
+  max-width: 570px;
+  height: 90%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.image-container {
+  padding-bottom: 67%;
+  height: 0;
+  width: 80%;
+  position: relative;
+}
+
+.single-poster {
+  height: 133%;
+  width: 90%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@media screen and (max-width: 743px) {
+
+  .poster-trailers {
+    margin-left: 1.5em;
+    width: 80%;
+    height: 90%;
+    align-items: center;
+  }
+
+  .image-container {
+    display: none;
+  }
+
+}
