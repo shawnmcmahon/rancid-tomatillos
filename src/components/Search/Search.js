@@ -18,24 +18,9 @@ class Search extends React.Component {
   }
 
   search = () => {
-    // let results = [...this.state.searchResults];
     let results = this.props.data.filter(movie => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
     this.setState({searchResults: results})
     this.props.updateMovies(results)
-
-  }
-
-  reset = () => {
-    this.setState({searchResults: this.props.data})
-    this.props.updateMovies(this.state.searchResults)
-  }
-
-  handleKeyPress = (event) => {
-    if (event.keyCode === 13) {
-      event.preventDefault()
-      console.log(event.keyCode)
-      this.search();
-    }
   }
 
   onFormSubmit = (event) => {
@@ -57,8 +42,7 @@ class Search extends React.Component {
           value={this.state.searchQuery}
           onChange={this.handleChange}
         />
-      <button type="submit" className="search" onClick={this.search}>Search</button>
-
+        <button type="submit" className="search" onClick={this.search}>Search</button>
       </form>
     )
   }
