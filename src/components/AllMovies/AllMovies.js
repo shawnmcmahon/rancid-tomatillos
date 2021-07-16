@@ -36,30 +36,16 @@ class AllMovies extends React.Component {
   }
 
   render() {
-    // const moviePosters = this.state.movies.map(movie => {
-    //   return (
-    //     <Movie
-    //         key={movie.id}
-    //         id={movie.id}
-    //         poster={movie.poster_path}
-    //         title={movie.title}
-    //         rating={movie.average_rating}
-    //     />
-    //   )
-    // })
-
-  return (
-
-    <div>
-      {this.state.error && <ErrorComponent type="500" />}
-      {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
-      <div className='all-movies-container'>
-        {this.state.movies}
+    return (
+      <div>
+        {this.state.error && <ErrorComponent type="500" />}
+        {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
+        <div className='all-movies-container'>
+          {this.state.movies}
+        </div>
       </div>
-    </div>
     )
   }
-
 }
 
 export default AllMovies;
