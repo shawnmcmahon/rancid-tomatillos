@@ -7,7 +7,7 @@ class Trailer extends React.Component {
   constructor() {
     super()
     this.state = {
-      trailers: '',
+      trailers: [],
     }
   }
 
@@ -18,6 +18,7 @@ class Trailer extends React.Component {
     })
   }
 
+
   getRandomTrailerKey = () => {
     const randomTrailer = this.state.trailers[Math.floor(Math.random() * this.state.trailers.length)];
     return {...randomTrailer}.key;
@@ -27,7 +28,7 @@ class Trailer extends React.Component {
     return (
       <div className="video-responsive">
         {
-          this.state.trailers &&
+          this.state.trailers.length &&
           <iframe
             src={"http://www.youtube.com/embed/" + this.getRandomTrailerKey()}
             width="560"

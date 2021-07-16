@@ -29,7 +29,7 @@ class AllMovies extends React.Component {
 
   updateMoviesState = (searchResults) => {
     (!searchResults.length)
-      ? this.setState({error: 'No movies matching search'})
+      ? this.setState({error: 'No movies matching search - please try another query'})
       : this.setState({ movies : this.renderPosters(searchResults), error: ''})
   }
 
@@ -51,8 +51,8 @@ class AllMovies extends React.Component {
     return (
       <div className="all-container">
         {!this.state.movies.length && this.state.error && <ErrorComponent type="500" />}
-        {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
-        <Search data={this.state.rawData} updateMovies={this.updateMoviesState} />
+        {!this.state.rawData.length && <h2 className="loading">Loading...</h2>}
+        {this.state.rawData.length ? <Search data={this.state.rawData} updateMovies={this.updateMoviesState} /> : null}
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.error &&
           <div className='all-movies-container'>

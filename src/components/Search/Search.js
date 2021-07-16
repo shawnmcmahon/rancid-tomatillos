@@ -53,6 +53,7 @@ class Search extends React.Component {
           id="search"
           type="text"
           name="search"
+          placeholder="Search for movies"
           value={this.state.searchQuery}
           onChange={this.handleChange}
         />
