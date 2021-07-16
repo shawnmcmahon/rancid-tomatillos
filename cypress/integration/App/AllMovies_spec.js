@@ -9,7 +9,6 @@ describe('Rotten Tomatillos', () => {
       cy.get('header')
         .contains('Rancid Tomatillos')
   })
-
   it('Should see a movie\' details when clicking on a movie poster', () => {
       cy.get("a[name='Mulan']")
         .click()

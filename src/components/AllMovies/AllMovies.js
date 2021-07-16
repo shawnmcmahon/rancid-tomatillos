@@ -1,5 +1,6 @@
 import React from 'react';
 import Movie from '../Movie/Movie';
+import Search from '../Search/Search';
 import './AllMovies.css'
 // import { Link } from "react-router-dom";
 import { getAllMovies } from '../../utilities/apiCalls'
@@ -12,7 +13,8 @@ class AllMovies extends React.Component {
     super()
     this.state = {
       movies: [],
-      error: false
+      error: false, 
+      rawData: []
     }
   }
 
@@ -29,7 +31,7 @@ class AllMovies extends React.Component {
               rating={movie.average_rating}
           />
         )
-      })
+      }), rawData : data.movies
     })
   )
   .catch(error => this.setState({error: true}))
@@ -37,9 +39,10 @@ class AllMovies extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="all-container">
         {this.state.error && <ErrorComponent type="500" />}
         {!this.state.movies.length && <h2 className="loading">Loading...</h2>}
+        <Search rawData={this.state.rawData}/>
         <div className='all-movies-container'>
           {this.state.movies}
         </div>
@@ -55,4 +58,5 @@ Movie.propTypes = {
     poster: PropTypes.string,
     title: PropTypes.string,
     rating: PropTypes.number,
+    rawData: PropTypes.array
 }

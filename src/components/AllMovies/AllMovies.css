@@ -1,11 +1,18 @@
 .all-movies-container {
-  margin-top: 8em;
+  margin-top: 2em;
   margin-left: 1em;
   display: grid;
   position: relative;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(1, 1fr);
   grid-gap: 1.5em;
+}
+
+.all-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 

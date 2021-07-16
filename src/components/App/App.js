@@ -2,6 +2,7 @@ import React from 'react';
 import AllMovies from '../AllMovies/AllMovies';
 import MoviePage from '../MoviePage/MoviePage';
 import ErrorComponent from '../ErrorComponent/ErrorComponent';
+import Search from '../Search/Search';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faStar } from '@fortawesome/free-solid-svg-icons'
 import {
@@ -19,8 +20,11 @@ const App = () => {
   return (
     <main>
       <header><h1>Rancid Tomatillos</h1></header>
+      { Search }
       <Switch>
-        <Route exact path="/" component={AllMovies} />
+        <Route 
+          exact path="/" 
+          component={AllMovies} />
         <Route
           path="/:id" render={({ match }) => {
             const { id } = match.params
