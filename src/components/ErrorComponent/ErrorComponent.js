@@ -1,9 +1,11 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import './ErrorComponent.css'
+
 
 const ErrorComponent = ({ type, message }) => {
   return (
-    <div>
+    <div className="error">
       <br />
       <br />
       <br />

@@ -30,8 +30,9 @@ class AllMovies extends React.Component {
           />
         )
       })
-    }))
-    .catch(error => this.setState({error: true}))
+    })
+  )
+  .catch(error => this.setState({error: true}))
   }
 
   render() {

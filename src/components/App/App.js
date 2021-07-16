@@ -18,13 +18,13 @@ const App = () => {
 
   return (
     <main>
-      <header><h1>Rancid Tomatillos</h1></header><br />
+      <header><h1>Rancid Tomatillos</h1></header>
       <Switch>
         <Route exact path="/" component={AllMovies} />
         <Route
           path="/:id" render={({ match }) => {
             const { id } = match.params
-            const regex = new RegExp('\d')
+            const regex = new RegExp('/d')
             if (regex.test(id.toString())) {
               return <ErrorComponent type="404" />
             }

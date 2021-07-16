@@ -3,6 +3,7 @@
   margin-top: 6em;
   margin-right: -5%;
   width: 35vw;
+  max-width: 570px;
   height: 90%;
   flex-direction: column;
   align-items: center;
