@@ -1,70 +1,98 @@
-# Getting Started with Create React App
+# What's Cookin Refactor Tractor 
+### Table of Contents
+- [Overview](#overview-and-project-goals)
+- [Why was this project created?](#why-was-this-project-created)
+- [Instructions for Viewing Project](#instructions-for-viewing-project)
+- [How does this work?](#how-does-this-work)
+- [Technologies Used](#technologies-used)
+- [Accesibility Score](#accesibility-score)
+- [Wins](#wins)
+- [Challenges](#challenges)
+- [Future Features](#features)
+- [Authors and Contributors](#credits)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview and Project Goals
+The goal of this partner project was to create a website where users can view movie information from a Heroku API. 
 
-## Available Scripts
+## Why was this project created?
+1. Build a solid understanding of React fundamentals. 
+2. Retrieve and display data from a Heroku API. 
+3. Incorporate Cypress to test React components and asychnornous JS. 
+4. Create a multi-page UX using Router.
+5. Practice refactoring a single page application to a multi-page UX using Router
 
-In the project directory, you can run:
 
-### `npm start`
+**[Back to top](#table-of-contents)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Instructions for Viewing Project
+Our application is deployed live on Heroku for easy viewing!
+1. Visit https://rancid-tomatillos-smbv.herokuapp.com/
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## How does this work?
+Demonstration of the app:
+##### 
 
-### `npm run build`
+##### 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+**[Back to top](#table-of-contents)**
 
-### `npm run eject`
+## Technologies Used
+<p align="left">
+  <img src="https://img.shields.io/badge/javascript%20-%23323330.svg?&style=for-the-badge&logo=javascript&logoColor=%23F7DF1E" alt="javascript" />
+  <img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white" alt="html5"/>
+  <img src="https://img.shields.io/badge/css3%20-%231572B6.svg?&style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
+  <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github" />
+  <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react" alt="React" />
+  <img src="https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router" alt="React Router" />
+  <p>API</p>
+  <p>Cypress</p>
+</p>
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Accessibility Score: 100
+* Tested with Lighthouse
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+##### Wins
+* Initial application setup takes hours not days with React 
+* React Router provides a smooth way to create multi-page applications
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+##### Challenges
+* Accounting for bad url paths when incorporating React Router
+* Applying a functional network request for the movie trailer from youtube 
+* Styling the MoviePage component for movies that had a long description and large amount of keywords 
+* Styling the CSS for mobile view edge-cases 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Future Features
+* Add a genre filter functionality 
+* Add a Express microservice to store a user's favorite movies 
+* Supplement the application with Unit and integration tests by using the React Testing Library
 
-### Code Splitting
+## Credits
+#### Authors
+<table>
+    <tr>
+          <td> Bobby V <a href="https://github.com/hoomberto">GH</td>
+    </tr>
+    </tr>
+ <td><img src="https://avatars.githubusercontent.com/u/79113236?v=4" alt="Bobby GH img"
+width="150" height="auto" /></td>
+     <tr>
+          <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
+      </tr>
+      </tr>
+<td><img src="https://avatars.githubusercontent.com/u/73731359?v=4" alt="Shawn GH img"
+width="150" height="auto" /></td>
+    </tr>
+</table>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**************************************************************************
+###### This project was created for [Turing School of Software and Design](https://turing.io/)
+###### 2021/07/19
+**[Back to top](#table-of-contents)**
