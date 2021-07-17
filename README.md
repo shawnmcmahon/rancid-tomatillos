@@ -1,7 +1,7 @@
 # Rancid Tomatillos
 ### Table of Contents
 - [Overview](#overview-and-project-goals)
-- [Why was this project created?](#why-was-this-project-created)
+- [Project Learning Goals](#project-learning-goals)
 - [Instructions for Viewing Project](#instructions-for-viewing-project)
 - [How does this work?](#how-does-this-work)
 - [Technologies Used](#technologies-used)
@@ -11,10 +11,10 @@
 - [Future Features](#future-features)
 - [Authors and Contributors](#credits)
 
-## Overview and Project Goals
+## Overview
 The goal of this partner project was to create a website where users can view movie information from a Heroku API. 
 
-## Why was this project created?
+## Project Learning Goals
 1. Build a solid understanding of React fundamentals. 
 2. Retrieve and display data from a Heroku API. 
 3. Incorporate Cypress to test React components and asychnornous JS. 
