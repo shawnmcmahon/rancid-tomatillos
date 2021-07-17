@@ -8,7 +8,7 @@
 - [Accesibility Score](#accesibility-score)
 - [Wins](#wins)
 - [Challenges](#challenges)
-- [Future Features](#features)
+- [Future Features](#future-features)
 - [Authors and Contributors](#credits)
 
 ## Overview and Project Goals
