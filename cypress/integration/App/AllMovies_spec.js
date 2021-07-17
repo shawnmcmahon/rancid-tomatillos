@@ -1,4 +1,4 @@
-describe('Rotten Tomatillos', () => {
+describe('All Movies', () => {
 
   beforeEach(() => {
     cy.visit('http://localhost:3000');
