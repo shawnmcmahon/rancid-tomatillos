@@ -19,6 +19,7 @@ class Search extends React.Component {
 
   search = () => {
     let results = this.props.data.filter(movie => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
+
     this.setState({searchResults: results})
     this.props.updateMovies(results)
   }

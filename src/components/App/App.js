@@ -24,6 +24,11 @@ const App = () => {
           exact path="/"
           component={AllMovies}
         />
+        <Route 
+            path="/:id/:invalidPath" render={() => {
+            return <ErrorComponent type="404" /> 
+          }}
+        />
         <Route
           path="/:id" render={({ match }) => {
             const { id } = match.params
