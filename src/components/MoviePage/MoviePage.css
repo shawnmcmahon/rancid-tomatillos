@@ -37,13 +37,6 @@ h1, h2 {
   font-size: 4.5vw;
 }
 
-.genre {
-  padding: 8px;
-  font-size: 13px;
-  border: 1px solid white;
-  border-radius: 12px;
-}
-
 @media screen and (max-width: 743px) {
 
   .background-image {

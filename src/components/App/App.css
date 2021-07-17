@@ -5,6 +5,7 @@ header {
   text-align: center;
   background: #383232;
   z-index: 10;
+  border-bottom: 8px solid #B7FA6B;
 }
 
 header h1 {
@@ -26,4 +27,11 @@ main h2 {
   margin-top: 8em;
   text-align: center;
   color: black;
+}
+
+@media screen and (max-width: 747px) {
+  header {
+    width: 100%;
+  }
+
 }
