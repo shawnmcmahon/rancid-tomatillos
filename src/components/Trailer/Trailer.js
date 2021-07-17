@@ -30,7 +30,7 @@ class Trailer extends React.Component {
         {
           this.state.trailers.length &&
           <iframe
-            src={"http://www.youtube.com/embed/" + this.getRandomTrailerKey()}
+            src={"https://www.youtube.com/embed/" + this.getRandomTrailerKey()}
             width="560"
             height="349"
             frameBorder="0"
