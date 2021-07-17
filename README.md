@@ -18,8 +18,7 @@ The goal of this partner project was to create a website where users can view mo
 1. Build a solid understanding of React fundamentals. 
 2. Retrieve and display data from a Heroku API. 
 3. Incorporate Cypress to test React components and asychnornous JS. 
-4. Create a multi-page UX using Router.
-5. Practice refactoring a single page application to a multi-page UX using Router
+4. Practice refactoring a single page application to a multi-page UX using Router
 
 
 **[Back to top](#table-of-contents)**
@@ -56,19 +55,19 @@ Demonstration of the app:
 * Tested with Lighthouse
 
 
-##### Wins
+## Wins
 * Initial application setup takes hours not days with React 
 * React Router provides a smooth way to create multi-page applications
 
 
-##### Challenges
+## Challenges
 * Accounting for bad url paths when incorporating React Router
 * Applying a functional network request for the movie trailer from youtube 
 * Styling the MoviePage component for movies that had a long description and large amount of keywords 
 * Styling the CSS for mobile view edge-cases 
 
 
-#### Future Features
+## Future Features
 * Add a genre filter functionality 
 * Add a Express microservice to store a user's favorite movies 
 * Supplement the application with Unit and integration tests by using the React Testing Library
