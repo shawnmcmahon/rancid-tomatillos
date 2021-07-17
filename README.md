@@ -48,7 +48,7 @@ Demonstration of the app:
   <img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" alt="Github" />
   <img src="https://img.shields.io/badge/-ReactJs-61DAFB?logo=react" alt="React" />
   <img src="https://img.shields.io/badge/-React%20Router-CA4245?logo=react-router" alt="React Router" />
-  <p>API</p>
+  <p>Heroku API</p>
   <p>Cypress</p>
 </p>
 
