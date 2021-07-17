@@ -80,7 +80,7 @@ Demonstration of the app:
           <td> Bobby V <a href="https://github.com/hoomberto">GH</td>
     </tr>
     </tr>
- <td><img src="https://avatars.githubusercontent.com/u/79113236?v=4" alt="Bobby GH img"
+ <td><img src="https://avatars.githubusercontent.com/u/78388491?v=4" alt="Bobby GH img"
 width="150" height="auto" /></td>
      <tr>
           <td> Shawn McMahon <a href="https://github.com/shawnmcmahon">GH</td>
