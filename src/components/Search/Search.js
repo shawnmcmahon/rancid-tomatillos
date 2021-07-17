@@ -29,9 +29,6 @@ class Search extends React.Component {
     this.search();
   }
 
-  // <label htmlFor="search">Search for movies
-  //
-  // </label>
   render() {
     return (
       <form onSubmit={this.onFormSubmit}>
