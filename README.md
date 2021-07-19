@@ -41,7 +41,7 @@ Our application is deployed live on Heroku for easy viewing!
 ![Responsive Design](https://media.giphy.com/media/RPtA3whoriBLxReigP/giphy.gif)
 
 #### Search Functionality
-![Search Functionality](https://giphy.com/gifs/QxOqIZpGh4hiK30BiN)
+![Search Functionality](https://media.giphy.com/media/QxOqIZpGh4hiK30BiN/giphy.gif)
 
 
 
