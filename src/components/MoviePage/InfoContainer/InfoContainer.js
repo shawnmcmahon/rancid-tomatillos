@@ -30,6 +30,7 @@ const InfoContainer = ({
           </p>
         </div>
         {stylize.length > 4 && <div className="genre-container">{stylize}</div>}
+
         {stylize.length === 4 && (
           <div className="medium-container">{stylize}</div>
         )}
