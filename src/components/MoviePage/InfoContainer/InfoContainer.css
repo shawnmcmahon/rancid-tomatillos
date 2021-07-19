@@ -63,7 +63,11 @@
 .smaller-container {
   display: flex;
   justify-content: space-between;
-  width: 13vw;
+  width: 22vw;
+}
+
+.three-container * {
+  margin-bottom: 3%;
 }
 
 .smaller-container * {
