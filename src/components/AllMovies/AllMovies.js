@@ -32,6 +32,10 @@ class AllMovies extends React.Component {
       : this.setState({ movies : this.renderPosters(searchResults), error: ''})
   }
 
+  skeletonScreen = () => {
+    return new Array(40).fill('placeholder').map((item, index) => <div key={index} className="movie-loading"><br /><br /></div>)
+  }
+
   renderPosters = (movies) => {
     return movies.map(movie => {
       return (
@@ -50,8 +54,12 @@ class AllMovies extends React.Component {
     return (
       <div className="all-container">
         {!this.state.movies.length && this.state.error && <ErrorComponent type="500" />}
-        {!this.state.rawData.length && <h2 className="loading">Loading...</h2>}
-        {this.state.rawData.length ? <Search data={this.state.rawData} updateMovies={this.updateMoviesState} /> : null}
+        <Search data={this.state.rawData} updateMovies={this.updateMoviesState} />
+        {!this.state.rawData.length &&
+          <div className='all-movies-container'>
+            {this.skeletonScreen()}
+          </div>
+        }
         {this.state.error && <h2>{this.state.error}</h2>}
         {!this.state.error &&
           <div className='all-movies-container'>
