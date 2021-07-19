@@ -19,9 +19,6 @@ const Rating = ({ rating }) => {
   for (let i = 0; i < (5 - rounded); i++) {
     remainder.push(<FontAwesomeIcon key={Math.floor(Math.random() * Date.now() + i)} icon="star" />)
   }
-  //
-  // const stars = new Array(rounded).fill(<FontAwesomeIcon icon="star" className="checked" />)
-  // const remainder = new Array(5 - rounded).fill(<FontAwesomeIcon icon="star" />)
   const allStars = stars.concat(remainder)
 
   return (

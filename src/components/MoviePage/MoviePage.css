@@ -26,6 +26,7 @@ h1, h2 {
 
 .info-media {
   display: flex;
+  flex-direction: row-reverse;
   height: 80vh;
   width: 100vw;
   margin-top: -6em;

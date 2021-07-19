@@ -1,5 +1,4 @@
 .video-responsive {
-  /* overflow: hidden; */
   padding-bottom: 56.25%;
   position: relative;
   margin-top: 8.5em;
@@ -7,12 +6,34 @@
   height: 0;
   width: 80%;
 }
+
 iframe {
   height: 100%;
   width: 90%;
   position: absolute;
   top: 0;
   left: 0;
+}
+
+iframe::before {
+  background-color: gray;
+  width: 560;
+  height: 349;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: -1;
+}
+
+.loading-trailer {
+  background-color: gray;
+  width: 560;
+  height: 349;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
 }
 
 
