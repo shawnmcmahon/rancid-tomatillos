@@ -15,6 +15,27 @@ iframe {
   left: 0;
 }
 
+iframe::before {
+  background-color: gray;
+  width: 560;
+  height: 349;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+  z-index: -1;
+}
+
+.loading-trailer {
+  background-color: gray;
+  width: 560;
+  height: 349;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+
 
 @media screen and (max-width: 743px) {
 

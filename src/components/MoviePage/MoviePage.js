@@ -50,8 +50,8 @@ class MoviePage extends React.Component {
     const { backdrop_path, poster_path, id, title, average_rating, release_date, tagline, overview, genres, runtime } = this.state.info || {}
     return (
       <section>
-        {!this.state.info && !this.state.error && <h2 className="loading">Loading...</h2>}
-        {!this.state.info && this.state.error && <ErrorComponent type="404" message={this.state.error}/>}
+        {!this.state.info && !this.state.error ? <h2 className="loading">Loading...</h2> : null }
+        {!this.state.info && this.state.error ? <ErrorComponent type="404" message={this.state.error}/> : null }
         {!this.state.error && this.state.info &&
           <div className="background-image" style={this.setGenreStyles(genres, backdrop_path).s}>
             <div className="info-media">
