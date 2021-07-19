@@ -31,9 +31,14 @@ Our application is deployed live on Heroku for easy viewing!
 
 ## How does this work?
 Demonstration of the app:
-##### 
-
-##### 
+##### Responsive Design
+![Responsive Design![SearchGif](https://user-images.githubusercontent.com/73731359/126217218-b6142b6d-551f-49ee-ad49-a795de7c56f1.gif)
+##### Search Functionality
+[!Search Functionality](https://user-images.githubusercontent.com/73731359/126217052-0b62491b-ea44-4a73-8bcf-1b92e6cb420e.gif)
+##### Home 
+<img width="500" alt="Home" src="https://user-images.githubusercontent.com/73731359/126217311-b101afbe-9310-494d-98ed-99a6bcd1c9b8.png">
+#### Movie Page
+<img width="500" alt="MoviePage" src="https://user-images.githubusercontent.com/73731359/126217366-0f017c8e-8a8f-4f28-9fc6-44872913a064.png">
 
 
 
