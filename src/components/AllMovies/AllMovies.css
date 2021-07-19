@@ -16,7 +16,6 @@
   align-items: center;
 }
 
-
 @media screen and (max-width: 1000px) {
   .all-movies-container {
     grid-template-columns: repeat(3, 1fr);

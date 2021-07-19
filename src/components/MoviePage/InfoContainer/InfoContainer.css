@@ -7,9 +7,8 @@
   width: 44vw;
   text-align: left;
   font-size: 2vh;
-  background: rgba(0,0,0, 0.82);
+  background: rgba(0, 0, 0, 0.82);
   border-radius: 8px;
-  /* margin-top: 7.2em; */
   margin-left: 1em;
   word-wrap: break-word;
   overflow-y: auto;
@@ -17,7 +16,7 @@
 
 .year {
   display: inline;
-  color: #D8D8E3;
+  color: #d8d8e3;
   font-size: 38px;
   font-size: 4.4vw;
 }
@@ -48,7 +47,7 @@
   margin-bottom: 3%;
   width: 50%;
   text-align: center;
-  grid-gap: .5em;
+  grid-gap: 0.5em;
 }
 
 .genre {
@@ -76,21 +75,18 @@
   text-align: center;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  grid-gap: .5em;
+  grid-gap: 0.5em;
 }
 
 @media screen and (max-width: 940px) {
-
   .rating-runtime-genre {
     flex-direction: column;
     align-content: flex-start;
     align-items: flex-start;
   }
-
 }
 
 @media screen and (max-width: 743px) {
-
   .background-image {
     overflow-x: hidden;
   }
@@ -145,12 +141,11 @@
     text-align: center;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
-    grid-gap: .5em;
+    grid-gap: 0.5em;
     border: none;
   }
 
   .genre {
     font-size: 2vw;
   }
-
 }

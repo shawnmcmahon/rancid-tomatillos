@@ -1,33 +1,35 @@
 import React from 'react';
-import './Search.css'
+import './Search.css';
 
 class Search extends React.Component {
   constructor(props) {
-    super(props)
-      this.state = {
-        searchQuery: '',
-        searchResults: this.props.data
-      }
+    super(props);
+    this.state = {
+      searchQuery: '',
+      searchResults: this.props.data,
+    };
   }
 
   handleChange = (event) => {
-    event.preventDefault()
-    this.setState({ searchQuery: ''})
-    const { value } = event.target
-    this.setState({ searchQuery: value })
-  }
+    event.preventDefault();
+    this.setState({ searchQuery: '' });
+    const { value } = event.target;
+    this.setState({ searchQuery: value });
+  };
 
   search = () => {
-    let results = this.props.data.filter(movie => movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase()))
+    let results = this.props.data.filter((movie) =>
+      movie.title.toLowerCase().includes(this.state.searchQuery.toLowerCase())
+    );
 
-    this.setState({searchResults: results})
-    this.props.updateMovies(results)
-  }
+    this.setState({ searchResults: results });
+    this.props.updateMovies(results);
+  };
 
   onFormSubmit = (event) => {
     event.preventDefault();
     this.search();
-  }
+  };
 
   render() {
     return (
@@ -40,11 +42,12 @@ class Search extends React.Component {
           value={this.state.searchQuery}
           onChange={this.handleChange}
         />
-        <button type="submit" className="search" onClick={this.search}>Search</button>
+        <button type="submit" className="search" onClick={this.search}>
+          Search
+        </button>
       </form>
-    )
+    );
   }
 }
-
 
 export default Search;
