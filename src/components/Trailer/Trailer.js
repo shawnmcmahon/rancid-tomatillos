@@ -27,7 +27,7 @@ class Trailer extends React.Component {
   render() {
     return (
       <div className="video-responsive">
-        {!this.state.trailers.length && <iframe className="loading-trailer"></iframe>}
+        {!this.state.trailers.length && <iframe title="unmounted-trailer" className="loading-trailer"></iframe>}
         {
           this.state.trailers.length &&
           <iframe
