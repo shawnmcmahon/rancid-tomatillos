@@ -35,7 +35,6 @@ Demonstration of the app:
 
 
 #### Search Functionality
-![Search](https://media.giphy.com/media/wXsBa3YJtRxsLi8xlK/giphy.gif)
 
 
 
