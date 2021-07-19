@@ -9,7 +9,7 @@
   font-size: 2vh;
   background: rgba(0,0,0, 0.82);
   border-radius: 8px;
-  margin-top: 4.2em;
+  margin-top: 7.2em;
   margin-left: 1em;
   word-wrap: break-word;
   overflow-y: auto;
@@ -56,7 +56,7 @@
 
 .genre {
   padding: 8px;
-  font-size: 1em;
+  font-size: 0.9em;
   border: 1px solid white;
   border-radius: 12px;
 }
