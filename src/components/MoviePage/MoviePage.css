@@ -29,7 +29,8 @@ h1, h2 {
   flex-direction: row-reverse;
   height: 80vh;
   width: 100vw;
-  margin-top: -6em;
+  margin-top: -2em;
+  margin-bottom: -9%;
 }
 
 
