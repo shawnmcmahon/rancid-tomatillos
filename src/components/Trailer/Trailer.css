@@ -36,12 +36,9 @@ iframe::before {
   border: 0;
 }
 
-
 @media screen and (max-width: 743px) {
-
   .video-responsive {
     width: 100%;
     margin-top: 3.5em;
   }
-
 }

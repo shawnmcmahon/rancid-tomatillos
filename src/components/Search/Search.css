@@ -6,9 +6,8 @@ form {
 
 form > button {
   margin: 0;
-  transition: .2s ease all;
+  transition: 0.2s ease all;
 }
-
 
 input {
   margin-top: 9em;
@@ -17,12 +16,12 @@ input {
 
 .search {
   margin-left: 2%;
-  background: #B7FA6B;
+  background: #b7fa6b;
   color: black;
   font-size: 16px;
   min-width: 100px;
 }
 
 .search:hover {
-  background: #89BA50;
+  background: #89ba50;
 }

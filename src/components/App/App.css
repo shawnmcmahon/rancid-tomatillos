@@ -5,7 +5,7 @@ header {
   text-align: center;
   background: #383232;
   z-index: 10;
-  border-bottom: 8px solid #B7FA6B;
+  border-bottom: 8px solid #b7fa6b;
 }
 
 header h1 {
@@ -33,5 +33,4 @@ main h2 {
   header {
     width: 100%;
   }
-
 }
