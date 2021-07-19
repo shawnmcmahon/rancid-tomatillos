@@ -38,7 +38,7 @@ Our application is deployed live on Heroku for easy viewing!
 <img width="500" alt="MoviePage" src="https://user-images.githubusercontent.com/73731359/126217366-0f017c8e-8a8f-4f28-9fc6-44872913a064.png">
 
 #### Responsive Design
-![Responsive Design]()
+![Responsive Design](https://media.giphy.com/media/RPtA3whoriBLxReigP/giphy.gif)
 
 #### Search Functionality
 ![Search Functionality](https://giphy.com/gifs/QxOqIZpGh4hiK30BiN)
