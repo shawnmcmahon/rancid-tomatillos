@@ -2,7 +2,6 @@ import React from 'react';
 import Movie from '../Movie/Movie';
 import Search from '../Search/Search';
 import './AllMovies.css'
-// import { Link } from "react-router-dom";
 import { getAllMovies } from '../../utilities/apiCalls'
 import PropTypes from 'prop-types';
 import ErrorComponent from '../ErrorComponent/ErrorComponent';

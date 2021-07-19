@@ -9,8 +9,6 @@ import {
         Route,
       } from "react-router-dom";
 import PropTypes from 'prop-types';
-
-// import Search from '../Search/Search'
 import './App.css';
 library.add(faStar)
 
@@ -24,9 +22,9 @@ const App = () => {
           exact path="/"
           component={AllMovies}
         />
-        <Route 
+        <Route
             path="/:id/:invalidPath" render={() => {
-            return <ErrorComponent type="404" /> 
+            return <ErrorComponent type="404" />
           }}
         />
         <Route
