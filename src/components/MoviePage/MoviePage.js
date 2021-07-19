@@ -24,7 +24,12 @@ class MoviePage extends React.Component {
   }
 
   setGenreStyles = (movieGenres, backdrop) => {
-    const genres = movieGenres.map((genre, index)=> <div key={index} className="genre">{genre}</div>)
+    const genres = movieGenres.map((genre, index)=> {
+      if (genre === "Science Fiction") {
+        genre = "Sci-Fi"
+      }
+      return <div key={index} className="genre">{genre}</div>
+    })
     const styles = {
       backgroundImage: `url(${backdrop})`
     }

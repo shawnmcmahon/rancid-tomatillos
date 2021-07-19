@@ -9,7 +9,7 @@
   font-size: 2vh;
   background: rgba(0,0,0, 0.82);
   border-radius: 8px;
-  margin-top: 7.2em;
+  /* margin-top: 7.2em; */
   margin-left: 1em;
   word-wrap: break-word;
   overflow-y: auto;
@@ -27,21 +27,18 @@
   justify-content: space-around;
   align-content: center;
   align-items: center;
-  width: 100%;
+  width: 90%;
 }
 
 .runtime-rating {
   display: flex;
-  /* padding-bottom: 3%; */
 }
 
 .runtime-rating p {
-  /* margin: 0; */
 }
 
 .runtime {
   font-size: 18px;
-  /* margin-bottom: 3%; */
 }
 
 .genre-container {
@@ -56,15 +53,18 @@
 
 .genre {
   padding: 8px;
-  font-size: 0.9em;
+  font-size: 0.77em;
   border: 1px solid white;
   border-radius: 12px;
+  place-self: center;
+  min-width: 80px;
+  text-align: center;
 }
 
 .smaller-container {
   display: flex;
   justify-content: space-between;
-  width: 10vw;
+  width: 13vw;
 }
 
 .smaller-container * {
@@ -150,7 +150,7 @@
   }
 
   .genre {
-    font-size: 4vw;
+    font-size: 2vw;
   }
 
 }
