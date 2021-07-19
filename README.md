@@ -33,6 +33,7 @@ Our application is deployed live on Heroku for easy viewing!
 Demonstration of the app:
 #### Responsive Design
 
+
 #### Search Functionality
 https://user-images.githubusercontent.com/73731359/126217791-8637d0b6-074e-474e-a850-d1bf4a9ad143.mp4
 
