@@ -35,7 +35,7 @@ Demonstration of the app:
 
 
 #### Search Functionality
-https://user-images.githubusercontent.com/73731359/126217791-8637d0b6-074e-474e-a850-d1bf4a9ad143.mp4
+![Search](https://media.giphy.com/media/wXsBa3YJtRxsLi8xlK/giphy.gif)
 
 
 
