@@ -34,7 +34,9 @@ Demonstration of the app:
 #### Responsive Design
 
 #### Search Functionality
-![SearchGif](https://user-images.githubusercontent.com/73731359/126217668-02e703ac-6ada-47da-9e78-fed32156581b.gif)
+![Search](https://user-images.githubusercontent.com/73731359/126217791-8637d0b6-074e-474e-a850-d1bf4a9ad143.mp4)
+
+
 
 #### Home 
 <img width="500" alt="Home" src="https://user-images.githubusercontent.com/73731359/126217311-b101afbe-9310-494d-98ed-99a6bcd1c9b8.png">
