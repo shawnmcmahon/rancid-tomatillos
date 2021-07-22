@@ -31,12 +31,6 @@ Our application is deployed live on Heroku for easy viewing!
 
 ## How does this work?
 
-#### Home 
-<img width="500" alt="Home" src="https://user-images.githubusercontent.com/73731359/126217311-b101afbe-9310-494d-98ed-99a6bcd1c9b8.png">
-
-#### Movie Page
-<img width="500" alt="Screen Shot 2021-07-19 at 2 18 10 PM" src="https://user-images.githubusercontent.com/73731359/126221898-a0c1007b-c7db-4b1e-a6d3-98e7ead210c9.png">
-
 #### Responsive Design
 ![Responsive Design](https://media.giphy.com/media/4T0grAc8dKDu4qVFoN/giphy.gif)
 
