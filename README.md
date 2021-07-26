@@ -17,7 +17,7 @@ The goal of this partner project was to create a website where users can view mo
 ## Project Learning Goals
 1. Build a solid understanding of React fundamentals. 
 2. Retrieve and display data from a Heroku API. 
-3. Incorporate Cypress to test React components and asychnornous JS. 
+3. Incorporate Cypress to test React components and asychronous JS. 
 4. Practice refactoring a single page application to a multi-page UX using Router
 
 
