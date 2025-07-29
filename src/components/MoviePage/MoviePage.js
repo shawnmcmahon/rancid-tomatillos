@@ -19,7 +19,7 @@ class MoviePage extends React.Component {
   componentDidMount() {
     getMovie(this.state.id)
       .then((data) => {
-        this.setState({ info: data.movie });
+        this.setState({ info: data });
       })
       .catch((error) => this.setState({ error: `${error}` }));
   }
