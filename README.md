@@ -9,6 +9,7 @@
 - [Wins](#wins)
 - [Challenges](#challenges)
 - [Future Features](#future-features)
+- [Deployment](#deployment)
 - [Authors and Contributors](#credits)
 
 ## Overview
@@ -24,8 +25,8 @@ The goal of this partner project was to create a website where users can view mo
 **[Back to top](#table-of-contents)**
 
 ## Instructions for Viewing Project
-Our application is deployed live on Heroku for easy viewing!
-1. Visit https://rancid-tomatillos-smbv.herokuapp.com/
+Our application is deployed live on Netlify for easy viewing!
+1. Visit https://rancid-tomatillos-sm.netlify.com/
 
 
 
@@ -73,6 +74,32 @@ Our application is deployed live on Heroku for easy viewing!
 * Add a genre filter functionality 
 * Add a Express microservice to store a user's favorite movies 
 * Supplement the application with Unit and integration tests by using the React Testing Library
+
+## Deployment
+
+### Local Development
+```bash
+npm install
+npm start
+```
+
+### Netlify Deployment
+This project is configured for deployment on Netlify with the following setup:
+
+1. **Build Command**: `npm run build`
+2. **Publish Directory**: `build`
+3. **Node Version**: 16.x
+
+#### Manual Deployment
+```bash
+npm run build
+netlify deploy --prod --dir=build
+```
+
+#### Automatic Deployment
+Connect your GitHub repository to Netlify for automatic deployments on push to main branch.
+
+The application will be available at: https://rancid-tomatillos-sm.netlify.com/
 
 ## Credits
 #### Authors
