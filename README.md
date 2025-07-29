@@ -57,7 +57,6 @@ Our application is deployed live on Netlify for easy viewing!
 ## Accessibility Score: 100
 * Tested with Lighthouse
 
-
 ## Wins
 * Initial application setup takes hours not days with React 
 * React Router provides a smooth way to create multi-page applications
@@ -74,30 +73,6 @@ Our application is deployed live on Netlify for easy viewing!
 * Add a genre filter functionality 
 * Add a Express microservice to store a user's favorite movies 
 * Supplement the application with Unit and integration tests by using the React Testing Library
-
-## Deployment
-
-### Local Development
-```bash
-npm install
-npm start
-```
-
-### Netlify Deployment
-This project is configured for deployment on Netlify with the following setup:
-
-1. **Build Command**: `npm run build`
-2. **Publish Directory**: `build`
-3. **Node Version**: 16.x
-
-#### Manual Deployment
-```bash
-npm run build
-netlify deploy --prod --dir=build
-```
-
-#### Automatic Deployment
-Connect your GitHub repository to Netlify for automatic deployments on push to main branch.
 
 The application will be available at: https://rancid-tomatillos-sm.netlify.com/
 
